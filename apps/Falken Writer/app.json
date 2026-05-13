@@ -1,0 +1,41 @@
+{
+  "slug": "falken-writer",
+  "title": {
+    "es": "Falken Writer",
+    "en": "Falken Writer"
+  },
+  "subtitle": {
+    "es": "iPadOS y macOS",
+    "en": "iPadOS and macOS"
+  },
+  "shortDescription": {
+    "es": "Editor de texto retro para iPad y Mac con biblioteca, iCloud, RTF, Markdown, PDF y estetica terminal retro.",
+    "en": "Retro text editor for iPad and Mac with library, iCloud, RTF, Markdown, PDF export, and tactical terminal aesthetics."
+  },
+  "description": {
+    "es": "Falken Writer es un editor de texto para iPad y Mac con una estetica retro inspirada en terminales clasicas, disenado para escribir, organizar y revisar documentos sin distracciones.\n\nFalken Writer es completamente funcional gratis con el estilo Fosforo Verde; la compra in-app solo desbloquea estilos visuales retro adicionales.\n\nIncluye una biblioteca integrada con sincronizacion mediante iCloud Drive, apertura de archivos externos desde Archivos/Finder, guardado local, historial de versiones, etiquetas, favoritos, busqueda, autoguardado configurable y soporte para documentos en TXT, Markdown, LOG, RTF, HTML y CSV.\n\nEl editor permite trabajar con texto plano o enriquecido, aplicar estilos rapidos, negrita, cursiva, tachado, alineacion, tamano de fuente y sangrias visuales con regla y controles precisos. Tambien permite exportar documentos a PDF.\n\nLa interfaz combina funcionalidad moderna con una identidad visual tactica y analogica: verde fosforo sobre negro como perfil gratuito, paneles tipo terminal, telemetria del documento y una experiencia sobria enfocada en la escritura.\n\nFalken Writer esta pensado para quienes quieren un editor diferente: minimalista, funcional, compatible con iPad y Mac, y con una personalidad visual propia.",
+    "en": "Falken Writer is a text editor for iPad and Mac with a retro terminal-inspired aesthetic, designed for focused writing, document organization, and distraction-free editing.\n\nFalken Writer is fully functional for free with the Phosphor Green style; the in-app purchase only unlocks additional retro visual styles.\n\nIt includes an integrated document library with iCloud Drive sync, external file opening from Files/Finder, local saving, version history, tags, favorites, search, configurable autosave, and support for TXT, Markdown, LOG, RTF, HTML, and CSV documents.\n\nThe editor supports both plain text and rich text workflows, with quick styles, bold, italic, strikethrough, alignment, font size controls, and visual indentation using a ruler and precise manual settings. Documents can also be exported to PDF.\n\nThe interface combines modern writing tools with a tactical analog identity: phosphor green on black as the free default profile, terminal-style panels, document telemetry, and a sober environment focused on writing.\n\nFalken Writer is built for users who want a different kind of editor: minimal, functional, compatible with iPad and Mac, and defined by a distinctive visual personality."
+  },
+  "platforms": ["ipados", "macos"],
+  "tags": {
+    "es": ["Productividad", "Retro", "Editor", "Terminal", "Codigo"],
+    "en": ["Productivity", "Retro", "Editor", "Terminal", "Code"]
+  },
+  "links": {
+    "appStore": "https://apps.apple.com/us/app/falken-writer/id6768220346",
+    "macAppStore": "https://apps.apple.com/us/app/falken-writer/id6768220346"
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ipados": {
+        "es": ["ipados/es/01.png", "ipados/es/02.png", "ipados/es/03.png", "ipados/es/04.png", "ipados/es/05.png", "ipados/es/06.png", "ipados/es/07.png"],
+        "en": ["ipados/en/01.png", "ipados/en/02.png", "ipados/en/03.png", "ipados/en/04.png", "ipados/en/05.png", "ipados/en/06.png", "ipados/en/07.png", "ipados/en/08.png", "ipados/en/09.png", "ipados/en/10.png", "ipados/en/11.png", "ipados/en/12.png"]
+      },
+      "macos": {
+        "es": ["macos/es/01.png", "macos/es/02.png", "macos/es/03.png", "macos/es/04.png"],
+        "en": ["macos/en/01.png", "macos/en/02.png", "macos/en/03.png", "macos/en/04.png", "macos/en/05.png", "macos/en/06.png", "macos/en/07.png", "macos/en/08.png"]
+      }
+    }
+  }
+}

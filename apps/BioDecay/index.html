@@ -25,7 +25,7 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
             <a href="../../index.html" class="flex items-center gap-3">
-                <span class="text-sm font-semibold tracking-tight sm:text-base">Takatoke Factory</span>
+                <span class="text-lg font-bold tracking-tight sm:text-xl">Takatoke Factory</span>
             </a>
 
             <div class="grid grid-cols-2 rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-semibold" aria-label="Selector de idioma">
@@ -167,16 +167,10 @@ Stop guessing. Start optimizing. Download BioDecay and turn data into peak perfo
 
         const COPY = {
             es: {
-                appStoreSmall: 'Download on the',
-                appStore: 'App Store',
-                macAppStore: 'Mac App Store',
                 screenshot: 'Captura',
                 rights: 'Todos los derechos reservados.'
             },
             en: {
-                appStoreSmall: 'Download on the',
-                appStore: 'App Store',
-                macAppStore: 'Mac App Store',
                 screenshot: 'Screenshot',
                 rights: 'All rights reserved.'
             }
@@ -202,24 +196,16 @@ Stop guessing. Start optimizing. Download BioDecay and turn data into peak perfo
 
             if (APP.links.appStore) {
                 buttons.push(`
-                    <a href="${APP.links.appStore}" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800">
-                        <i data-lucide="apple" class="h-7 w-7"></i>
-                        <span class="text-left leading-none">
-                            <span class="block text-[10px] font-medium uppercase tracking-wide">${COPY[lang].appStoreSmall}</span>
-                            <span class="mt-1 block text-lg font-semibold tracking-tight">${COPY[lang].appStore}</span>
-                        </span>
+                    <a href="${APP.links.appStore}" class="inline-flex transition hover:-translate-y-0.5" aria-label="App Store - ${getText(APP.title, lang)}">
+                        <img src="../../Download_App_${lang.toUpperCase()}.svg" alt="App Store" class="h-14 w-auto">
                     </a>
                 `);
             }
 
             if (APP.links.macAppStore) {
                 buttons.push(`
-                    <a href="${APP.links.macAppStore}" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800">
-                        <i data-lucide="monitor-down" class="h-7 w-7"></i>
-                        <span class="text-left leading-none">
-                            <span class="block text-[10px] font-medium uppercase tracking-wide">${COPY[lang].appStoreSmall}</span>
-                            <span class="mt-1 block text-lg font-semibold tracking-tight">${COPY[lang].macAppStore}</span>
-                        </span>
+                    <a href="${APP.links.macAppStore}" class="inline-flex transition hover:-translate-y-0.5" aria-label="Mac App Store - ${getText(APP.title, lang)}">
+                        <img src="../../Download_Mac_${lang.toUpperCase()}.svg" alt="Mac App Store" class="h-14 w-auto">
                     </a>
                 `);
             }

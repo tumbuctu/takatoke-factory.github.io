@@ -1,0 +1,45 @@
+{
+  "slug": "kangoban",
+  "title": {
+    "es": "KangoBan",
+    "en": "KangoBan"
+  },
+  "subtitle": {
+    "es": "iOS, iPadOS y macOS",
+    "en": "iOS, iPadOS and macOS"
+  },
+  "shortDescription": {
+    "es": "Organiza tu trabajo con tableros Kanban elegantes, tareas con notas, fechas, checklist, iCloud Sync y analitica clara en todos tus dispositivos.",
+    "en": "Organize work with elegant Kanban boards, detailed tasks, checklists, iCloud sync, and clear insights across all your devices."
+  },
+  "description": {
+    "es": "KangoBan es una app Kanban elegante y potente para organizar proyectos, tareas y objetivos con claridad. Crea tableros visuales, divide el trabajo en columnas, anade tareas detalladas y manten siempre el control de tu flujo.\n\nDisenada para ofrecer una experiencia limpia, moderna y profesional, KangoBan te ayuda a planificar mejor, priorizar lo importante y avanzar de forma constante tanto en trabajo personal como en proyectos mas exigentes.\n\nCon KangoBan puedes:\n\n- Crear multiples tableros para separar proyectos, clientes, areas o rutinas.\n- Gestionar tareas con notas, prioridad, etiquetas y fechas limite.\n- Anadir checklist dentro de cada tarea para dividir el trabajo en pasos concretos.\n- Filtrar tareas por proximas, vencidas o prioritarias.\n- Buscar rapidamente entre tareas, notas, etiquetas y checklist.\n- Reordenar y mover tareas entre columnas de forma natural.\n- Consultar analitica visual del progreso de cada tablero.\n- Exportar tableros en formato JSON para copia, analisis o respaldo.\n- Sincronizar tus datos entre dispositivos con iCloud.\n- Trabajar con una interfaz cuidada, rapida y enfocada en la productividad real.\n\nKangoBan es ideal para organizar trabajo, estudio, planificacion personal, creacion de contenido, seguimiento de clientes o cualquier flujo que necesite estructura visual y control.\n\nSi buscas una app Kanban con estilo, enfoque profesional y herramientas realmente utiles para el dia a dia, KangoBan esta pensada para ti.",
+    "en": "KangoBan is an elegant and powerful Kanban app designed to help you organize projects, tasks, and goals with clarity. Create visual boards, break work into columns, add detailed tasks, and stay in control of your workflow at all times.\n\nBuilt to deliver a clean, modern, and professional experience, KangoBan helps you plan better, focus on priorities, and move work forward consistently whether you are managing personal tasks or more demanding projects.\n\nWith KangoBan you can:\n\n- Create multiple boards to separate projects, clients, areas, or routines.\n- Manage tasks with notes, priority, tags, and due dates.\n- Add checklists inside each task to break work into clear steps.\n- Filter tasks by upcoming, overdue, or priority.\n- Search quickly across tasks, notes, tags, and checklist items.\n- Reorder and move tasks naturally between columns.\n- Review visual insights for each board.\n- Export boards in JSON format for backup, analysis, or portability.\n- Sync your data across devices with iCloud.\n- Work with a polished, fast, and productivity-focused interface.\n\nKangoBan is ideal for work, study, personal planning, content creation, client tracking, or any workflow that benefits from visual structure and better control.\n\nIf you are looking for a Kanban app with style, a professional feel, and tools that are genuinely useful every day, KangoBan is built for you."
+  },
+  "platforms": ["ios", "ipados", "macos"],
+  "tags": {
+    "es": ["Productividad", "Tareas", "Proyectos", "Notas", "Agenda", "Kanban"],
+    "en": ["Productivity", "Tasks", "Projects", "Notes", "Planner", "Kanban"]
+  },
+  "links": {
+    "appStore": "https://apps.apple.com/us/app/kangoban/id6763927545",
+    "macAppStore": "https://apps.apple.com/us/app/kangoban/id6763927545"
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ios": {
+        "es": ["ios/es/01.png", "ios/es/02.png", "ios/es/03.png", "ios/es/04.png", "ios/es/05.png", "ios/es/06.png", "ios/es/07.png"],
+        "en": ["ios/en/01.PNG", "ios/en/02.PNG", "ios/en/03.PNG", "ios/en/04.PNG", "ios/en/05.PNG", "ios/en/06.PNG"]
+      },
+      "ipados": {
+        "es": ["ipados/es/01.PNG", "ipados/es/02.PNG", "ipados/es/03.PNG", "ipados/es/04.PNG"],
+        "en": ["ipados/en/01.PNG", "ipados/en/02.PNG", "ipados/en/03.PNG", "ipados/en/04.PNG"]
+      },
+      "macos": {
+        "es": ["macos/es/01.PNG", "macos/es/02.PNG", "macos/es/03.PNG", "macos/es/04.PNG"],
+        "en": ["macos/en/01.PNG", "macos/en/02.PNG", "macos/en/03.PNG", "macos/en/04.PNG"]
+      }
+    }
+  }
+}

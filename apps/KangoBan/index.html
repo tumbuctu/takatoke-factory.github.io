@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KangoBan | Takatoke Factory</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        soft: '0 24px 80px rgba(15, 23, 42, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white font-sans text-slate-950 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+            <a href="../../index.html" class="flex items-center gap-3">
+                <span class="text-lg font-bold tracking-tight sm:text-xl">Takatoke Factory</span>
+            </a>
+
+            <div class="grid grid-cols-2 rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-semibold" aria-label="Selector de idioma">
+                <button type="button" class="language-button rounded-full px-3 py-1.5 transition" data-lang="es">ES</button>
+                <button type="button" class="language-button rounded-full px-3 py-1.5 transition" data-lang="en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+            <div>
+                <div id="app-icon" class="flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 to-slate-600 text-white shadow-sm">
+                    <i data-lucide="app-window" class="h-10 w-10"></i>
+                </div>
+
+                <p id="app-platforms" class="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500"></p>
+                <h1 id="app-title" class="mt-3 text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl"></h1>
+                <p id="app-description" class="mt-6 whitespace-pre-line text-lg leading-8 text-slate-600"></p>
+
+                <div id="app-tags" class="mt-7 flex flex-wrap gap-2"></div>
+                <div id="store-buttons" class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"></div>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+                <div id="platform-tabs" class="mb-4 flex flex-wrap gap-2"></div>
+                <div id="screenshots" class="grid gap-4 sm:grid-cols-2"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500">
+        &copy; 2026 Takatoke Factory. <span data-i18n="rights">Todos los derechos reservados.</span>
+    </footer>
+
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/80 p-4 backdrop-blur-xl sm:p-8" role="dialog" aria-modal="true" aria-label="Captura ampliada">
+        <button type="button" id="modal-close" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-slate-950 shadow-sm transition hover:bg-white" aria-label="Cerrar">
+            <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+        <div class="flex max-h-[92vh] w-full max-w-7xl items-center justify-center">
+            <img id="modal-image" src="" alt="" class="max-h-[92vh] max-w-full rounded-2xl bg-white object-contain shadow-soft">
+        </div>
+    </div>
+
+    <script>
+        /*
+            Cuando dupliques esta carpeta, cambia estos datos para que coincidan con app.json.
+            Si prefieres, cambia solo app.json y dime que sincronice las apps.
+        */
+        const APP = {
+            slug: 'kangoban',
+            title: {
+                es: 'KangoBan',
+                en: 'KangoBan'
+            },
+            subtitle: {
+                es: 'iOS, iPadOS y macOS',
+                en: 'iOS, iPadOS and macOS'
+            },
+            description: {
+                es: `KangoBan es una app Kanban elegante y potente para organizar proyectos, tareas y objetivos con claridad. Crea tableros visuales, divide el trabajo en columnas, añade tareas detalladas y mantén siempre el control de tu flujo.
+
+Diseñada para ofrecer una experiencia limpia, moderna y profesional, KangoBan te ayuda a planificar mejor, priorizar lo importante y avanzar de forma constante tanto en trabajo personal como en proyectos más exigentes.
+
+Con KangoBan puedes:
+
+- Crear múltiples tableros para separar proyectos, clientes, áreas o rutinas.
+- Gestionar tareas con notas, prioridad, etiquetas y fechas límite.
+- Añadir checklist dentro de cada tarea para dividir el trabajo en pasos concretos.
+- Filtrar tareas por próximas, vencidas o prioritarias.
+- Buscar rápidamente entre tareas, notas, etiquetas y checklist.
+- Reordenar y mover tareas entre columnas de forma natural.
+- Consultar analítica visual del progreso de cada tablero.
+- Exportar tableros en formato JSON para copia, análisis o respaldo.
+- Sincronizar tus datos entre dispositivos con iCloud.
+- Trabajar con una interfaz cuidada, rápida y enfocada en la productividad real.
+
+KangoBan es ideal para organizar trabajo, estudio, planificación personal, creación de contenido, seguimiento de clientes o cualquier flujo que necesite estructura visual y control.
+
+Si buscas una app Kanban con estilo, enfoque profesional y herramientas realmente útiles para el día a día, KangoBan está pensada para ti.`,
+                en: `KangoBan is an elegant and powerful Kanban app designed to help you organize projects, tasks, and goals with clarity. Create visual boards, break work into columns, add detailed tasks, and stay in control of your workflow at all times.
+
+Built to deliver a clean, modern, and professional experience, KangoBan helps you plan better, focus on priorities, and move work forward consistently whether you are managing personal tasks or more demanding projects.
+
+With KangoBan you can:
+
+- Create multiple boards to separate projects, clients, areas, or routines.
+- Manage tasks with notes, priority, tags, and due dates.
+- Add checklists inside each task to break work into clear steps.
+- Filter tasks by upcoming, overdue, or priority.
+- Search quickly across tasks, notes, tags, and checklist items.
+- Reorder and move tasks naturally between columns.
+- Review visual insights for each board.
+- Export boards in JSON format for backup, analysis, or portability.
+- Sync your data across devices with iCloud.
+- Work with a polished, fast, and productivity-focused interface.
+
+KangoBan is ideal for work, study, personal planning, content creation, client tracking, or any workflow that benefits from visual structure and better control.
+
+If you are looking for a Kanban app with style, a professional feel, and tools that are genuinely useful every day, KangoBan is built for you.`
+            },
+            platforms: ['ios', 'ipados', 'macos'],
+            tags: {
+                es: ['Productividad', 'Tareas', 'Proyectos', 'Notas', 'Agenda', 'Kanban'],
+                en: ['Productivity', 'Tasks', 'Projects', 'Notes', 'Planner', 'Kanban']
+            },
+            icon: 'icon.png',
+            links: {
+                appStore: 'https://apps.apple.com/us/app/kangoban/id6763927545',
+                macAppStore: 'https://apps.apple.com/us/app/kangoban/id6763927545'
+            },
+            screenshots: {
+                ios: {
+                    es: [
+                        'ios/es/01.png',
+                        'ios/es/02.png',
+                        'ios/es/03.png',
+                        'ios/es/04.png',
+                        'ios/es/05.png',
+                        'ios/es/06.png',
+                        'ios/es/07.png'
+                    ],
+                    en: [
+                        'ios/en/01.PNG',
+                        'ios/en/02.PNG',
+                        'ios/en/03.PNG',
+                        'ios/en/04.PNG',
+                        'ios/en/05.PNG',
+                        'ios/en/06.PNG'
+                    ]
+                },
+                ipados: {
+                    es: [
+                        'ipados/es/01.PNG',
+                        'ipados/es/02.PNG',
+                        'ipados/es/03.PNG',
+                        'ipados/es/04.PNG'
+                    ],
+                    en: [
+                        'ipados/en/01.PNG',
+                        'ipados/en/02.PNG',
+                        'ipados/en/03.PNG',
+                        'ipados/en/04.PNG'
+                    ]
+                },
+                macos: {
+                    es: [
+                        'macos/es/01.PNG',
+                        'macos/es/02.PNG',
+                        'macos/es/03.PNG',
+                        'macos/es/04.PNG'
+                    ],
+                    en: [
+                        'macos/en/01.PNG',
+                        'macos/en/02.PNG',
+                        'macos/en/03.PNG',
+                        'macos/en/04.PNG'
+                    ]
+                }
+            }
+        };
+
+        const COPY = {
+            es: {
+                screenshot: 'Captura',
+                rights: 'Todos los derechos reservados.'
+            },
+            en: {
+                screenshot: 'Screenshot',
+                rights: 'All rights reserved.'
+            }
+        };
+
+        const platformLabel = {
+            ios: 'iOS',
+            ipados: 'iPadOS',
+            macos: 'macOS'
+        };
+
+        let currentPlatform = APP.platforms[0];
+
+        const getSavedLanguage = () => {
+            const saved = localStorage.getItem('takatoke-language');
+            return ['es', 'en'].includes(saved) ? saved : 'es';
+        };
+
+        const getText = (value, lang) => value?.[lang] || value?.es || value?.en || '';
+
+        const renderStoreButtons = (lang) => {
+            const buttons = [];
+
+            if (APP.links.appStore) {
+                buttons.push(`
+                    <a href="${APP.links.appStore}" class="inline-flex transition hover:-translate-y-0.5" aria-label="App Store - ${getText(APP.title, lang)}">
+                        <img src="../../Download_App_${lang.toUpperCase()}.svg" alt="App Store" class="h-14 w-auto">
+                    </a>
+                `);
+            }
+
+            if (APP.links.macAppStore) {
+                buttons.push(`
+                    <a href="${APP.links.macAppStore}" class="inline-flex transition hover:-translate-y-0.5" aria-label="Mac App Store - ${getText(APP.title, lang)}">
+                        <img src="../../Download_Mac_${lang.toUpperCase()}.svg" alt="Mac App Store" class="h-14 w-auto">
+                    </a>
+                `);
+            }
+
+            document.querySelector('#store-buttons').innerHTML = buttons.join('');
+        };
+
+        const renderScreenshots = (lang) => {
+            const shots = APP.screenshots[currentPlatform]?.[lang] || [];
+            const screenshots = shots.length > 0 ? shots : ['', '', '', ''];
+
+            document.querySelector('#screenshots').innerHTML = screenshots.map((src, index) => {
+                if (src) {
+                    return `
+                        <button type="button" class="screenshot-button group block overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft" data-src="${src}" data-alt="${COPY[lang].screenshot} ${index + 1}">
+                            <img src="${src}" alt="${COPY[lang].screenshot} ${index + 1}" class="h-full min-h-[280px] w-full object-cover transition duration-300 group-hover:scale-[1.02]">
+                        </button>
+                    `;
+                }
+
+                return `<div class="flex min-h-[280px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">${COPY[lang].screenshot} ${index + 1}</div>`;
+            }).join('');
+
+            document.querySelectorAll('.screenshot-button').forEach((button) => {
+                button.addEventListener('click', () => openImageModal(button.dataset.src, button.dataset.alt));
+            });
+        };
+
+        const openImageModal = (src, alt) => {
+            const modal = document.querySelector('#image-modal');
+            const image = document.querySelector('#modal-image');
+
+            image.src = src;
+            image.alt = alt;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const closeImageModal = () => {
+            const modal = document.querySelector('#image-modal');
+            const image = document.querySelector('#modal-image');
+
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            image.src = '';
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        document.querySelector('#modal-close').addEventListener('click', closeImageModal);
+        document.querySelector('#image-modal').addEventListener('click', (event) => {
+            if (event.target.id === 'image-modal') closeImageModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeImageModal();
+        });
+
+        const renderPlatformTabs = (lang) => {
+            document.querySelector('#platform-tabs').innerHTML = APP.platforms.map((platform) => `
+                <button type="button" class="platform-button rounded-full px-4 py-2 text-sm font-semibold transition ${platform === currentPlatform ? 'bg-slate-950 text-white' : 'bg-white text-slate-600 hover:bg-slate-100'}" data-platform="${platform}">
+                    ${platformLabel[platform]}
+                </button>
+            `).join('');
+
+            document.querySelectorAll('.platform-button').forEach((button) => {
+                button.addEventListener('click', () => {
+                    currentPlatform = button.dataset.platform;
+                    applyLanguage(lang);
+                });
+            });
+        };
+
+        const applyLanguage = (lang) => {
+            document.documentElement.lang = lang;
+            localStorage.setItem('takatoke-language', lang);
+            document.title = `${getText(APP.title, lang)} | Takatoke Factory`;
+
+            document.querySelector('#app-title').textContent = getText(APP.title, lang);
+            document.querySelector('#app-platforms').textContent = getText(APP.subtitle, lang);
+            document.querySelector('#app-description').textContent = getText(APP.description, lang);
+            document.querySelector('#app-tags').innerHTML = APP.tags[lang].map((tag) => `<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">${tag}</span>`).join('');
+            document.querySelector('[data-i18n="rights"]').textContent = COPY[lang].rights;
+
+            if (APP.icon) {
+                document.querySelector('#app-icon').outerHTML = `<img id="app-icon" src="${APP.icon}" alt="" class="h-24 w-24 rounded-2xl object-cover shadow-sm">`;
+            }
+
+            document.querySelectorAll('.language-button').forEach((button) => {
+                const isActive = button.dataset.lang === lang;
+                button.classList.toggle('bg-white', isActive);
+                button.classList.toggle('text-slate-950', isActive);
+                button.classList.toggle('shadow-sm', isActive);
+                button.classList.toggle('text-slate-500', !isActive);
+            });
+
+            renderStoreButtons(lang);
+            renderPlatformTabs(lang);
+            renderScreenshots(lang);
+            lucide.createIcons();
+        };
+
+        document.querySelectorAll('.language-button').forEach((button) => {
+            button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+        });
+
+        applyLanguage(getSavedLanguage());
+    </script>
+</body>
+</html>

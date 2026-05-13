@@ -25,9 +25,6 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
             <a href="../../index.html" class="flex items-center gap-3">
-                <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-sm">
-                    <i data-lucide="arrow-left" class="h-5 w-5"></i>
-                </span>
                 <span class="text-sm font-semibold tracking-tight sm:text-base">Takatoke Factory</span>
             </a>
 
@@ -63,6 +60,15 @@
     <footer class="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500">
         &copy; 2026 Takatoke Factory. <span data-i18n="rights">Todos los derechos reservados.</span>
     </footer>
+
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/80 p-4 backdrop-blur-xl sm:p-8" role="dialog" aria-modal="true" aria-label="Captura ampliada">
+        <button type="button" id="modal-close" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-slate-950 shadow-sm transition hover:bg-white" aria-label="Cerrar">
+            <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+        <div class="flex max-h-[92vh] w-full max-w-7xl items-center justify-center">
+            <img id="modal-image" src="" alt="" class="max-h-[92vh] max-w-full rounded-2xl bg-white object-contain shadow-soft">
+        </div>
+    </div>
 
     <script>
         /*
@@ -228,12 +234,50 @@ Falken Writer is built for users who want a different kind of editor: minimal, f
 
             document.querySelector('#screenshots').innerHTML = screenshots.map((src, index) => {
                 if (src) {
-                    return `<img src="${src}" alt="${COPY[lang].screenshot} ${index + 1}" class="h-full min-h-[280px] w-full rounded-2xl border border-slate-200 bg-white object-cover shadow-sm">`;
+                    return `
+                        <button type="button" class="screenshot-button group block overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft" data-src="${src}" data-alt="${COPY[lang].screenshot} ${index + 1}">
+                            <img src="${src}" alt="${COPY[lang].screenshot} ${index + 1}" class="h-full min-h-[280px] w-full object-cover transition duration-300 group-hover:scale-[1.02]">
+                        </button>
+                    `;
                 }
 
                 return `<div class="flex min-h-[280px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">${COPY[lang].screenshot} ${index + 1}</div>`;
             }).join('');
+
+            document.querySelectorAll('.screenshot-button').forEach((button) => {
+                button.addEventListener('click', () => openImageModal(button.dataset.src, button.dataset.alt));
+            });
         };
+
+        const openImageModal = (src, alt) => {
+            const modal = document.querySelector('#image-modal');
+            const image = document.querySelector('#modal-image');
+
+            image.src = src;
+            image.alt = alt;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        };
+
+        const closeImageModal = () => {
+            const modal = document.querySelector('#image-modal');
+            const image = document.querySelector('#modal-image');
+
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            image.src = '';
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        document.querySelector('#modal-close').addEventListener('click', closeImageModal);
+        document.querySelector('#image-modal').addEventListener('click', (event) => {
+            if (event.target.id === 'image-modal') closeImageModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeImageModal();
+        });
 
         const renderPlatformTabs = (lang) => {
             document.querySelector('#platform-tabs').innerHTML = APP.platforms.map((platform) => `

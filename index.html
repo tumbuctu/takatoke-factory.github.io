@@ -28,9 +28,6 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
             <a href="#" class="flex items-center gap-3" aria-label="Takatoke Factory inicio">
-                <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-sm">
-                    <i data-lucide="sparkles" class="h-5 w-5"></i>
-                </span>
                 <span class="text-sm font-semibold tracking-tight sm:text-base">Takatoke Factory</span>
             </a>
 
@@ -50,89 +47,8 @@
     </header>
 
     <main>
-        <!-- Hero -->
-        <section class="relative overflow-hidden">
-            <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-12 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
-                <div class="max-w-3xl">
-                    <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
-                        <i data-lucide="apple" class="h-4 w-4 text-slate-950"></i>
-                        <span data-i18n="heroKicker">Apps nativas para iOS y macOS</span>
-                    </p>
-
-                    <h1 class="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl" data-i18n="heroTitle">
-                        Software elegante para ideas que merecen una buena experiencia.
-                    </h1>
-
-                    <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl" data-i18n="heroDescription">
-                        En Takatoke Factory diseñamos y desarrollamos aplicaciones cuidadas, rápidas y minimalistas para el ecosistema Apple.
-                    </p>
-
-                    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-                        <a href="#portfolio" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
-                            <span data-i18n="heroPrimary">Ver portfolio</span>
-                            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-                        </a>
-                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50" data-i18n="heroSecondary">
-                            Hablemos
-                        </a>
-                    </div>
-                </div>
-
-                <div class="relative mx-auto w-full max-w-md lg:max-w-lg">
-                    <div class="absolute inset-8 rounded-[3rem] bg-slate-100 blur-3xl"></div>
-                    <div class="relative rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-soft">
-                        <div class="rounded-[2rem] bg-slate-950 p-4 text-white">
-                            <div class="mb-6 flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <span class="h-3 w-3 rounded-full bg-rose-400"></span>
-                                    <span class="h-3 w-3 rounded-full bg-amber-300"></span>
-                                    <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
-                                </div>
-                                <span class="text-xs font-medium text-slate-400">Prototype</span>
-                            </div>
-
-                            <div class="grid gap-3">
-                                <div class="rounded-3xl bg-white p-5 text-slate-950">
-                                    <div class="flex items-start justify-between gap-4">
-                                        <div>
-                                            <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Now building</p>
-                                            <h2 class="mt-2 text-2xl font-semibold tracking-tight" data-i18n="heroDeviceTitle">Tu próxima app</h2>
-                                        </div>
-                                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                                            <i data-lucide="rocket" class="h-5 w-5"></i>
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div class="rounded-3xl bg-slate-800 p-4">
-                                        <i data-lucide="smartphone" class="mb-8 h-5 w-5 text-slate-300"></i>
-                                        <p class="text-sm font-medium">iPhone ready</p>
-                                    </div>
-                                    <div class="rounded-3xl bg-slate-800 p-4">
-                                        <i data-lucide="monitor" class="mb-8 h-5 w-5 text-slate-300"></i>
-                                        <p class="text-sm font-medium">Mac ready</p>
-                                    </div>
-                                </div>
-
-                                <div class="rounded-3xl bg-slate-900 p-4">
-                                    <div class="mb-3 flex items-center justify-between text-sm">
-                                        <span class="font-medium text-slate-200">Design polish</span>
-                                        <span class="text-slate-400">98%</span>
-                                    </div>
-                                    <div class="h-2 overflow-hidden rounded-full bg-slate-700">
-                                        <div class="h-full w-[98%] rounded-full bg-white"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Portfolio -->
-        <section id="portfolio" class="border-t border-slate-200 bg-slate-50 py-20 sm:py-24">
+        <section id="portfolio" class="bg-slate-50 py-16 sm:py-20">
             <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Portfolio</p>
@@ -152,9 +68,9 @@
                     <h2 class="text-2xl font-semibold tracking-tight text-slate-950" data-i18n="contactTitle">Construyamos algo cuidado.</h2>
                     <p class="mt-2 text-slate-600" data-i18n="contactDescription">Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.</p>
                 </div>
-                <a href="mailto:hola@takatokefactory.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                <a href="mailto:takatokefactory@gmail.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
                     <i data-lucide="mail" class="h-4 w-4"></i>
-                    hola@takatokefactory.com
+                    takatokefactory@gmail.com
                 </a>
             </div>
         </section>
@@ -171,16 +87,10 @@
             es: {
                 navPortfolio: 'Portfolio',
                 navContact: 'Contacto',
-                heroKicker: 'Apps nativas para iOS, iPadOS y macOS',
-                heroTitle: 'Software elegante para ideas que merecen una buena experiencia.',
-                heroDescription: 'En Takatoke Factory diseñamos y desarrollamos aplicaciones cuidadas, rápidas y minimalistas para el ecosistema Apple.',
-                heroPrimary: 'Ver portfolio',
-                heroSecondary: 'Hablemos',
-                heroDeviceTitle: 'Tu próxima app',
                 portfolioTitle: 'Apps publicadas y proyectos en camino.',
                 portfolioDescription: 'Duplica la carpeta de plantilla, cambia textos e imágenes, y tendrás una nueva app lista para añadir a la web.',
                 contactTitle: 'Construyamos algo cuidado.',
-                contactDescription: 'Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.',
+                contactDescription: 'Escríbenos si quieres hablar de una app, una colaboración o una idea en desarrollo.',
                 footerRights: 'Todos los derechos reservados.',
                 details: 'Ver detalles',
                 appStoreSmall: 'Download on the',
@@ -191,16 +101,10 @@
             en: {
                 navPortfolio: 'Portfolio',
                 navContact: 'Contact',
-                heroKicker: 'Native apps for iOS, iPadOS and macOS',
-                heroTitle: 'Elegant software for ideas that deserve a great experience.',
-                heroDescription: 'At Takatoke Factory we design and build thoughtful, fast and minimal apps for the Apple ecosystem.',
-                heroPrimary: 'View portfolio',
-                heroSecondary: 'Let’s talk',
-                heroDeviceTitle: 'Your next app',
                 portfolioTitle: 'Published apps and upcoming projects.',
                 portfolioDescription: 'Duplicate the template folder, replace text and images, and your next app will be ready to add to the site.',
                 contactTitle: 'Let’s build something polished.',
-                contactDescription: 'Add your email, social links or contact page here whenever you are ready to publish it.',
+                contactDescription: 'Write to us if you want to talk about an app, a collaboration or an idea in progress.',
                 footerRights: 'All rights reserved.',
                 details: 'View details',
                 appStoreSmall: 'Download on the',

@@ -3,42 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takatoke Factory | App Development</title>
+    <meta name="description" content="Takatoke Factory desarrolla apps cuidadas para iOS y macOS. Portfolio de aplicaciones, productos y experiencias digitales.">
+    <title>Takatoke Factory | Apps for iOS & macOS</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        soft: '0 24px 80px rgba(15, 23, 42, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-white font-sans text-slate-950 antialiased">
 
-    <!-- Header -->
-    <header class="py-10 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tight text-indigo-600">Takatoke Factory</h1>
-        <p class="mt-2 text-lg text-gray-600">Creando experiencias digitales únicas.</p>
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
+            <a href="#" class="flex items-center gap-3" aria-label="Takatoke Factory inicio">
+                <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-sm">
+                    <i data-lucide="sparkles" class="h-5 w-5"></i>
+                </span>
+                <span class="text-sm font-semibold tracking-tight sm:text-base">Takatoke Factory</span>
+            </a>
+
+            <div class="hidden items-center gap-7 text-sm font-medium text-slate-600 sm:flex">
+                <a href="#portfolio" class="transition hover:text-slate-950">Portfolio</a>
+                <a href="#contacto" class="transition hover:text-slate-950">Contacto</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- App Section -->
-    <main class="max-w-5xl mx-auto px-4 py-12">
-        <h2 class="text-2xl font-bold mb-8 border-b pb-2">Nuestras Apps</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Tarjeta de App 1 (Copia este bloque para nuevas apps) -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl mr-4 flex items-center justify-center font-bold text-indigo-500">LOGO</div>
-                    <div>
-                        <h3 class="text-xl font-bold">Nombre de tu App</h3>
-                        <p class="text-sm text-gray-500">iOS & macOS</p>
+    <main>
+        <!-- Hero -->
+        <section class="relative overflow-hidden">
+            <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-12 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
+                        <i data-lucide="apple" class="h-4 w-4 text-slate-950"></i>
+                        Apps nativas para iOS y macOS
+                    </p>
+
+                    <h1 class="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+                        Software elegante para ideas que merecen una buena experiencia.
+                    </h1>
+
+                    <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+                        En Takatoke Factory diseñamos y desarrollamos aplicaciones cuidadas, rápidas y minimalistas para el ecosistema Apple.
+                    </p>
+
+                    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+                        <a href="#portfolio" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
+                            Ver portfolio
+                            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                        </a>
+                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50">
+                            Hablemos
+                        </a>
                     </div>
                 </div>
-                <p class="text-gray-600 mb-6">Aquí va una descripción breve y atractiva de lo que hace tu aplicación maravillosa.</p>
-                <a href="#" class="inline-block bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">
-                    Ver en App Store
+
+                <div class="relative mx-auto w-full max-w-md lg:max-w-lg">
+                    <div class="absolute inset-8 rounded-[3rem] bg-slate-100 blur-3xl"></div>
+                    <div class="relative rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-soft">
+                        <div class="rounded-[2rem] bg-slate-950 p-4 text-white">
+                            <div class="mb-6 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                                    <span class="h-3 w-3 rounded-full bg-amber-300"></span>
+                                    <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                                </div>
+                                <span class="text-xs font-medium text-slate-400">Prototype</span>
+                            </div>
+
+                            <div class="grid gap-3">
+                                <div class="rounded-3xl bg-white p-5 text-slate-950">
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div>
+                                            <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Now building</p>
+                                            <h2 class="mt-2 text-2xl font-semibold tracking-tight">Tu próxima app</h2>
+                                        </div>
+                                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                                            <i data-lucide="rocket" class="h-5 w-5"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="rounded-3xl bg-slate-800 p-4">
+                                        <i data-lucide="smartphone" class="mb-8 h-5 w-5 text-slate-300"></i>
+                                        <p class="text-sm font-medium">iPhone ready</p>
+                                    </div>
+                                    <div class="rounded-3xl bg-slate-800 p-4">
+                                        <i data-lucide="monitor" class="mb-8 h-5 w-5 text-slate-300"></i>
+                                        <p class="text-sm font-medium">Mac ready</p>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-3xl bg-slate-900 p-4">
+                                    <div class="mb-3 flex items-center justify-between text-sm">
+                                        <span class="font-medium text-slate-200">Design polish</span>
+                                        <span class="text-slate-400">98%</span>
+                                    </div>
+                                    <div class="h-2 overflow-hidden rounded-full bg-slate-700">
+                                        <div class="h-full w-[98%] rounded-full bg-white"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="border-t border-slate-200 bg-slate-50 py-20 sm:py-24">
+            <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Portfolio</p>
+                    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Apps publicadas y proyectos en camino.</h2>
+                    <p class="mt-5 text-lg leading-8 text-slate-600">Duplica una App Card, cambia textos, icono, capturas y enlaces, y tendrás una nueva app lista en minutos.</p>
+                </div>
+
+                <div class="mt-12 grid gap-8">
+                    <!-- App Card: copia desde aquí para añadir nuevas apps -->
+                    <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+                        <div class="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                            <div class="p-6 sm:p-8 lg:p-10">
+                                <div class="flex items-center gap-4">
+                                    <!-- Sustituye este placeholder por un <img> con el icono de tu app -->
+                                    <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 to-slate-600 text-white shadow-sm">
+                                        <i data-lucide="app-window" class="h-9 w-9"></i>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-sm font-medium text-slate-500">iOS & macOS</p>
+                                        <h3 class="mt-1 text-2xl font-semibold tracking-tight text-slate-950">Nombre de tu App</h3>
+                                    </div>
+                                </div>
+
+                                <p class="mt-6 text-base leading-7 text-slate-600">
+                                    Una descripción corta, clara y atractiva de la aplicación. Explica el beneficio principal en una o dos frases.
+                                </p>
+
+                                <div class="mt-7 flex flex-wrap gap-2">
+                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">Productividad</span>
+                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">SwiftUI</span>
+                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">Universal App</span>
+                                </div>
+
+                                <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                                    <!-- Sustituye # por el enlace real de App Store -->
+                                    <a href="#" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="Descargar Nombre de tu App en App Store">
+                                        <i data-lucide="apple" class="h-7 w-7"></i>
+                                        <span class="text-left leading-none">
+                                            <span class="block text-[10px] font-medium uppercase tracking-wide">Download on the</span>
+                                            <span class="mt-1 block text-lg font-semibold tracking-tight">App Store</span>
+                                        </span>
+                                    </a>
+
+                                    <!-- Sustituye # por el enlace real de Mac App Store si tu app también está disponible en macOS -->
+                                    <a href="#" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="Descargar Nombre de tu App en Mac App Store">
+                                        <i data-lucide="monitor-down" class="h-7 w-7"></i>
+                                        <span class="text-left leading-none">
+                                            <span class="block text-[10px] font-medium uppercase tracking-wide">Download on the</span>
+                                            <span class="mt-1 block text-lg font-semibold tracking-tight">Mac App Store</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Galería: sustituye los placeholders por capturas reales -->
+                            <div class="grid min-h-[360px] grid-cols-3 gap-3 bg-slate-100 p-4 sm:p-6">
+                                <div class="flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 1</div>
+                                <div class="flex translate-y-6 items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 2</div>
+                                <div class="flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 3</div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- App Card: copia hasta aquí para añadir nuevas apps -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contacto" class="bg-white py-16">
+            <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:px-6 md:flex-row md:items-center lg:px-8">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight text-slate-950">Construyamos algo cuidado.</h2>
+                    <p class="mt-2 text-slate-600">Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.</p>
+                </div>
+                <a href="mailto:hola@takatokefactory.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                    <i data-lucide="mail" class="h-4 w-4"></i>
+                    hola@takatokefactory.com
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="py-10 text-center text-gray-400 text-xs">
+    <footer class="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500">
         &copy; 2026 Takatoke Factory. Todos los derechos reservados.
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

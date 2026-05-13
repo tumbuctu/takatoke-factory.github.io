@@ -34,9 +34,17 @@
                 <span class="text-sm font-semibold tracking-tight sm:text-base">Takatoke Factory</span>
             </a>
 
-            <div class="hidden items-center gap-7 text-sm font-medium text-slate-600 sm:flex">
-                <a href="#portfolio" class="transition hover:text-slate-950">Portfolio</a>
-                <a href="#contacto" class="transition hover:text-slate-950">Contacto</a>
+            <div class="flex items-center gap-4">
+                <div class="hidden items-center gap-7 text-sm font-medium text-slate-600 sm:flex">
+                    <a href="#portfolio" class="transition hover:text-slate-950" data-i18n="navPortfolio">Portfolio</a>
+                    <a href="#contacto" class="transition hover:text-slate-950" data-i18n="navContact">Contacto</a>
+                </div>
+
+                <!-- Language selector -->
+                <div class="grid grid-cols-2 rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-semibold" aria-label="Selector de idioma">
+                    <button type="button" class="language-button rounded-full px-3 py-1.5 transition" data-lang="es">ES</button>
+                    <button type="button" class="language-button rounded-full px-3 py-1.5 transition" data-lang="en">EN</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -48,23 +56,23 @@
                 <div class="max-w-3xl">
                     <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
                         <i data-lucide="apple" class="h-4 w-4 text-slate-950"></i>
-                        Apps nativas para iOS y macOS
+                        <span data-i18n="heroKicker">Apps nativas para iOS y macOS</span>
                     </p>
 
-                    <h1 class="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+                    <h1 class="text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl" data-i18n="heroTitle">
                         Software elegante para ideas que merecen una buena experiencia.
                     </h1>
 
-                    <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+                    <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl" data-i18n="heroDescription">
                         En Takatoke Factory diseñamos y desarrollamos aplicaciones cuidadas, rápidas y minimalistas para el ecosistema Apple.
                     </p>
 
                     <div class="mt-10 flex flex-col gap-3 sm:flex-row">
                         <a href="#portfolio" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800">
-                            Ver portfolio
+                            <span data-i18n="heroPrimary">Ver portfolio</span>
                             <i data-lucide="arrow-right" class="h-4 w-4"></i>
                         </a>
-                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50">
+                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50" data-i18n="heroSecondary">
                             Hablemos
                         </a>
                     </div>
@@ -88,7 +96,7 @@
                                     <div class="flex items-start justify-between gap-4">
                                         <div>
                                             <p class="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">Now building</p>
-                                            <h2 class="mt-2 text-2xl font-semibold tracking-tight">Tu próxima app</h2>
+                                            <h2 class="mt-2 text-2xl font-semibold tracking-tight" data-i18n="heroDeviceTitle">Tu próxima app</h2>
                                         </div>
                                         <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white">
                                             <i data-lucide="rocket" class="h-5 w-5"></i>
@@ -128,68 +136,12 @@
             <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Portfolio</p>
-                    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Apps publicadas y proyectos en camino.</h2>
-                    <p class="mt-5 text-lg leading-8 text-slate-600">Duplica una App Card, cambia textos, icono, capturas y enlaces, y tendrás una nueva app lista en minutos.</p>
+                    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl" data-i18n="portfolioTitle">Apps publicadas y proyectos en camino.</h2>
+                    <p class="mt-5 text-lg leading-8 text-slate-600" data-i18n="portfolioDescription">Duplica una App Card, cambia textos, icono, capturas y enlaces, y tendrás una nueva app lista en minutos.</p>
                 </div>
 
-                <div class="mt-12 grid gap-8">
-                    <!-- App Card: copia desde aquí para añadir nuevas apps -->
-                    <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-                        <div class="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
-                            <div class="p-6 sm:p-8 lg:p-10">
-                                <div class="flex items-center gap-4">
-                                    <!-- Sustituye este placeholder por un <img> con el icono de tu app -->
-                                    <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 to-slate-600 text-white shadow-sm">
-                                        <i data-lucide="app-window" class="h-9 w-9"></i>
-                                    </div>
-
-                                    <div>
-                                        <p class="text-sm font-medium text-slate-500">iOS & macOS</p>
-                                        <h3 class="mt-1 text-2xl font-semibold tracking-tight text-slate-950">Nombre de tu App</h3>
-                                    </div>
-                                </div>
-
-                                <p class="mt-6 text-base leading-7 text-slate-600">
-                                    Una descripción corta, clara y atractiva de la aplicación. Explica el beneficio principal en una o dos frases.
-                                </p>
-
-                                <div class="mt-7 flex flex-wrap gap-2">
-                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">Productividad</span>
-                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">SwiftUI</span>
-                                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">Universal App</span>
-                                </div>
-
-                                <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                                    <!-- Sustituye # por el enlace real de App Store -->
-                                    <a href="#" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="Descargar Nombre de tu App en App Store">
-                                        <i data-lucide="apple" class="h-7 w-7"></i>
-                                        <span class="text-left leading-none">
-                                            <span class="block text-[10px] font-medium uppercase tracking-wide">Download on the</span>
-                                            <span class="mt-1 block text-lg font-semibold tracking-tight">App Store</span>
-                                        </span>
-                                    </a>
-
-                                    <!-- Sustituye # por el enlace real de Mac App Store si tu app también está disponible en macOS -->
-                                    <a href="#" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="Descargar Nombre de tu App en Mac App Store">
-                                        <i data-lucide="monitor-down" class="h-7 w-7"></i>
-                                        <span class="text-left leading-none">
-                                            <span class="block text-[10px] font-medium uppercase tracking-wide">Download on the</span>
-                                            <span class="mt-1 block text-lg font-semibold tracking-tight">Mac App Store</span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Galería: sustituye los placeholders por capturas reales -->
-                            <div class="grid min-h-[360px] grid-cols-3 gap-3 bg-slate-100 p-4 sm:p-6">
-                                <div class="flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 1</div>
-                                <div class="flex translate-y-6 items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 2</div>
-                                <div class="flex items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">Shot 3</div>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- App Card: copia hasta aquí para añadir nuevas apps -->
-                </div>
+                <!-- Las tarjetas se crean desde el bloque APPS del script final. -->
+                <div id="portfolio-grid" class="mt-12 grid gap-8"></div>
             </div>
         </section>
 
@@ -197,8 +149,8 @@
         <section id="contacto" class="bg-white py-16">
             <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:px-6 md:flex-row md:items-center lg:px-8">
                 <div>
-                    <h2 class="text-2xl font-semibold tracking-tight text-slate-950">Construyamos algo cuidado.</h2>
-                    <p class="mt-2 text-slate-600">Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.</p>
+                    <h2 class="text-2xl font-semibold tracking-tight text-slate-950" data-i18n="contactTitle">Construyamos algo cuidado.</h2>
+                    <p class="mt-2 text-slate-600" data-i18n="contactDescription">Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.</p>
                 </div>
                 <a href="mailto:hola@takatokefactory.com" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
                     <i data-lucide="mail" class="h-4 w-4"></i>
@@ -209,11 +161,233 @@
     </main>
 
     <footer class="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500">
-        &copy; 2026 Takatoke Factory. Todos los derechos reservados.
+        &copy; 2026 Takatoke Factory. <span data-i18n="footerRights">Todos los derechos reservados.</span>
     </footer>
 
     <script>
-        lucide.createIcons();
+        const LANGUAGES = ['es', 'en'];
+
+        const COPY = {
+            es: {
+                navPortfolio: 'Portfolio',
+                navContact: 'Contacto',
+                heroKicker: 'Apps nativas para iOS, iPadOS y macOS',
+                heroTitle: 'Software elegante para ideas que merecen una buena experiencia.',
+                heroDescription: 'En Takatoke Factory diseñamos y desarrollamos aplicaciones cuidadas, rápidas y minimalistas para el ecosistema Apple.',
+                heroPrimary: 'Ver portfolio',
+                heroSecondary: 'Hablemos',
+                heroDeviceTitle: 'Tu próxima app',
+                portfolioTitle: 'Apps publicadas y proyectos en camino.',
+                portfolioDescription: 'Duplica la carpeta de plantilla, cambia textos e imágenes, y tendrás una nueva app lista para añadir a la web.',
+                contactTitle: 'Construyamos algo cuidado.',
+                contactDescription: 'Añade aquí tu email, redes o enlace de contacto cuando quieras publicarlo.',
+                footerRights: 'Todos los derechos reservados.',
+                details: 'Ver detalles',
+                appStoreSmall: 'Download on the',
+                appStore: 'App Store',
+                macAppStore: 'Mac App Store',
+                screenshot: 'Captura',
+            },
+            en: {
+                navPortfolio: 'Portfolio',
+                navContact: 'Contact',
+                heroKicker: 'Native apps for iOS, iPadOS and macOS',
+                heroTitle: 'Elegant software for ideas that deserve a great experience.',
+                heroDescription: 'At Takatoke Factory we design and build thoughtful, fast and minimal apps for the Apple ecosystem.',
+                heroPrimary: 'View portfolio',
+                heroSecondary: 'Let’s talk',
+                heroDeviceTitle: 'Your next app',
+                portfolioTitle: 'Published apps and upcoming projects.',
+                portfolioDescription: 'Duplicate the template folder, replace text and images, and your next app will be ready to add to the site.',
+                contactTitle: 'Let’s build something polished.',
+                contactDescription: 'Add your email, social links or contact page here whenever you are ready to publish it.',
+                footerRights: 'All rights reserved.',
+                details: 'View details',
+                appStoreSmall: 'Download on the',
+                appStore: 'App Store',
+                macAppStore: 'Mac App Store',
+                screenshot: 'Screenshot',
+            }
+        };
+
+        /*
+            APP DATA
+            Cuando dupliques apps/_plantilla-app, dime "revisa apps y añade las nuevas".
+            Yo leeré cada app.json y actualizaré este bloque para que la landing sea estática y rápida.
+        */
+        const APPS = [
+            {
+                slug: '_plantilla-app',
+                title: {
+                    es: 'Nombre de tu App',
+                    en: 'Your App Name'
+                },
+                subtitle: {
+                    es: 'iOS, iPadOS y macOS',
+                    en: 'iOS, iPadOS and macOS'
+                },
+                shortDescription: {
+                    es: 'Una descripción corta, clara y atractiva de la aplicación. Explica el beneficio principal en una o dos frases.',
+                    en: 'A short, clear and compelling app description. Explain the main benefit in one or two sentences.'
+                },
+                platforms: ['ios', 'ipados', 'macos'],
+                tags: {
+                    es: ['Productividad', 'SwiftUI', 'Universal'],
+                    en: ['Productivity', 'SwiftUI', 'Universal']
+                },
+                icon: '',
+                page: 'apps/_plantilla-app/',
+                links: {
+                    appStore: '#',
+                    macAppStore: '#'
+                },
+                screenshots: {
+                    es: [],
+                    en: []
+                }
+            }
+        ];
+
+        const platformLabel = {
+            ios: 'iOS',
+            ipados: 'iPadOS',
+            macos: 'macOS'
+        };
+
+        const getSavedLanguage = () => {
+            const saved = localStorage.getItem('takatoke-language');
+            return LANGUAGES.includes(saved) ? saved : 'es';
+        };
+
+        const getText = (value, lang) => {
+            if (typeof value === 'string') return value;
+            return value?.[lang] || value?.es || value?.en || '';
+        };
+
+        const renderAppIcon = (app) => {
+            if (app.icon) {
+                return `<img src="${app.icon}" alt="" class="h-20 w-20 rounded-2xl object-cover shadow-sm">`;
+            }
+
+            return `
+                <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 to-slate-600 text-white shadow-sm">
+                    <i data-lucide="app-window" class="h-9 w-9"></i>
+                </div>
+            `;
+        };
+
+        const renderGallery = (app, lang) => {
+            const shots = app.screenshots?.[lang] || app.screenshots?.es || [];
+
+            if (shots.length > 0) {
+                return shots.slice(0, 3).map((src, index) => `
+                    <img src="${src}" alt="${COPY[lang].screenshot} ${index + 1} - ${getText(app.title, lang)}" class="${index === 1 ? 'translate-y-6 ' : ''}h-full min-h-[320px] w-full rounded-2xl border border-slate-200 bg-white object-cover shadow-sm">
+                `).join('');
+            }
+
+            return [1, 2, 3].map((number, index) => `
+                <div class="${index === 1 ? 'translate-y-6 ' : ''}flex min-h-[320px] items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-400">
+                    ${COPY[lang].screenshot} ${number}
+                </div>
+            `).join('');
+        };
+
+        const renderStoreButtons = (app, lang) => {
+            const buttons = [];
+
+            if (app.links?.appStore) {
+                buttons.push(`
+                    <a href="${app.links.appStore}" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="${COPY[lang].appStore} - ${getText(app.title, lang)}">
+                        <i data-lucide="apple" class="h-7 w-7"></i>
+                        <span class="text-left leading-none">
+                            <span class="block text-[10px] font-medium uppercase tracking-wide">${COPY[lang].appStoreSmall}</span>
+                            <span class="mt-1 block text-lg font-semibold tracking-tight">${COPY[lang].appStore}</span>
+                        </span>
+                    </a>
+                `);
+            }
+
+            if (app.links?.macAppStore) {
+                buttons.push(`
+                    <a href="${app.links.macAppStore}" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-xl bg-black px-5 py-3 text-white transition hover:bg-slate-800" aria-label="${COPY[lang].macAppStore} - ${getText(app.title, lang)}">
+                        <i data-lucide="monitor-down" class="h-7 w-7"></i>
+                        <span class="text-left leading-none">
+                            <span class="block text-[10px] font-medium uppercase tracking-wide">${COPY[lang].appStoreSmall}</span>
+                            <span class="mt-1 block text-lg font-semibold tracking-tight">${COPY[lang].macAppStore}</span>
+                        </span>
+                    </a>
+                `);
+            }
+
+            return buttons.join('');
+        };
+
+        const renderPortfolio = (lang) => {
+            const portfolioGrid = document.querySelector('#portfolio-grid');
+
+            portfolioGrid.innerHTML = APPS.map((app) => `
+                <!-- App Card: ${app.slug} -->
+                <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+                    <div class="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                        <div class="p-6 sm:p-8 lg:p-10">
+                            <div class="flex items-center gap-4">
+                                ${renderAppIcon(app)}
+
+                                <div>
+                                    <p class="text-sm font-medium text-slate-500">${getText(app.subtitle, lang)}</p>
+                                    <h3 class="mt-1 text-2xl font-semibold tracking-tight text-slate-950">${getText(app.title, lang)}</h3>
+                                </div>
+                            </div>
+
+                            <p class="mt-6 text-base leading-7 text-slate-600">${getText(app.shortDescription, lang)}</p>
+
+                            <div class="mt-7 flex flex-wrap gap-2">
+                                ${app.tags[lang].map((tag) => `<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">${tag}</span>`).join('')}
+                            </div>
+
+                            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                                ${renderStoreButtons(app, lang)}
+                                <a href="${app.page}" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-300 hover:bg-slate-50">
+                                    ${COPY[lang].details}
+                                    <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="grid min-h-[360px] grid-cols-3 gap-3 bg-slate-100 p-4 sm:p-6">
+                            ${renderGallery(app, lang)}
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        };
+
+        const applyLanguage = (lang) => {
+            document.documentElement.lang = lang;
+            localStorage.setItem('takatoke-language', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach((element) => {
+                const key = element.dataset.i18n;
+                element.textContent = COPY[lang][key];
+            });
+
+            document.querySelectorAll('.language-button').forEach((button) => {
+                const isActive = button.dataset.lang === lang;
+                button.classList.toggle('bg-white', isActive);
+                button.classList.toggle('text-slate-950', isActive);
+                button.classList.toggle('shadow-sm', isActive);
+                button.classList.toggle('text-slate-500', !isActive);
+            });
+
+            renderPortfolio(lang);
+            lucide.createIcons();
+        };
+
+        document.querySelectorAll('.language-button').forEach((button) => {
+            button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+        });
+
+        applyLanguage(getSavedLanguage());
     </script>
 </body>
 </html>

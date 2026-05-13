@@ -1,0 +1,45 @@
+{
+  "slug": "_plantilla-app",
+  "title": {
+    "es": "Nombre de tu App",
+    "en": "Your App Name"
+  },
+  "subtitle": {
+    "es": "iOS, iPadOS y macOS",
+    "en": "iOS, iPadOS and macOS"
+  },
+  "shortDescription": {
+    "es": "Una descripcion corta, clara y atractiva para la tarjeta del portfolio.",
+    "en": "A short, clear and compelling description for the portfolio card."
+  },
+  "description": {
+    "es": "Descripcion completa de la app para su pagina individual. Explica que problema resuelve, para quien es y que la hace especial.",
+    "en": "Full app description for its individual page. Explain what problem it solves, who it is for and what makes it special."
+  },
+  "platforms": ["ios", "ipados", "macos"],
+  "tags": {
+    "es": ["Productividad", "SwiftUI", "Universal"],
+    "en": ["Productivity", "SwiftUI", "Universal"]
+  },
+  "links": {
+    "appStore": "#",
+    "macAppStore": "#"
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ios": {
+        "es": ["ios/es/01.png", "ios/es/02.png", "ios/es/03.png"],
+        "en": ["ios/en/01.png", "ios/en/02.png", "ios/en/03.png"]
+      },
+      "ipados": {
+        "es": ["ipados/es/01.png", "ipados/es/02.png", "ipados/es/03.png"],
+        "en": ["ipados/en/01.png", "ipados/en/02.png", "ipados/en/03.png"]
+      },
+      "macos": {
+        "es": ["macos/es/01.png", "macos/es/02.png", "macos/es/03.png"],
+        "en": ["macos/en/01.png", "macos/en/02.png", "macos/en/03.png"]
+      }
+    }
+  }
+}

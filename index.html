@@ -34,7 +34,7 @@
             <div class="flex items-center gap-4">
                 <div class="hidden items-center gap-7 text-sm font-medium text-slate-600 sm:flex">
                     <a href="#portfolio" class="transition hover:text-slate-950" data-i18n="navPortfolio">Portfolio</a>
-                    <a href="#contacto" class="transition hover:text-slate-950" data-i18n="navContact">Contacto</a>
+                    <a href="mailto:takatokefactory@gmail.com" class="transition hover:text-slate-950" data-i18n="navContact">Contacto</a>
                 </div>
 
                 <!-- Language selector -->
@@ -52,8 +52,7 @@
             <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Portfolio</p>
-                    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl" data-i18n="portfolioTitle">Apps publicadas y proyectos en camino.</h2>
-                    <p class="mt-5 text-lg leading-8 text-slate-600" data-i18n="portfolioDescription">Duplica una App Card, cambia textos, icono, capturas y enlaces, y tendrás una nueva app lista en minutos.</p>
+                    <h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl" data-i18n="portfolioTitle">Apps publicadas.</h2>
                 </div>
 
                 <!-- Las tarjetas se crean desde el bloque APPS del script final. -->
@@ -87,8 +86,7 @@
             es: {
                 navPortfolio: 'Portfolio',
                 navContact: 'Contacto',
-                portfolioTitle: 'Apps publicadas y proyectos en camino.',
-                portfolioDescription: 'Duplica la carpeta de plantilla, cambia textos e imágenes, y tendrás una nueva app lista para añadir a la web.',
+                portfolioTitle: 'Apps publicadas.',
                 contactTitle: 'Construyamos algo cuidado.',
                 contactDescription: 'Escríbenos si quieres hablar de una app, una colaboración o una idea en desarrollo.',
                 footerRights: 'Todos los derechos reservados.',
@@ -101,8 +99,7 @@
             en: {
                 navPortfolio: 'Portfolio',
                 navContact: 'Contact',
-                portfolioTitle: 'Published apps and upcoming projects.',
-                portfolioDescription: 'Duplicate the template folder, replace text and images, and your next app will be ready to add to the site.',
+                portfolioTitle: 'Published apps.',
                 contactTitle: 'Let’s build something polished.',
                 contactDescription: 'Write to us if you want to talk about an app, a collaboration or an idea in progress.',
                 footerRights: 'All rights reserved.',
@@ -120,6 +117,44 @@
             Yo leeré cada app.json y actualizaré este bloque para que la landing sea estática y rápida.
         */
         const APPS = [
+            {
+                slug: 'biodecay',
+                title: {
+                    es: 'BioDecay',
+                    en: 'BioDecay'
+                },
+                subtitle: {
+                    es: 'iOS',
+                    en: 'iOS'
+                },
+                shortDescription: {
+                    es: 'Motor farmacocinético de precisión para monitorizar biodisponibilidad, hidratación y suplementos mediante modelado dinámico y gráficas en tiempo real.',
+                    en: 'Precision pharmacokinetic engine for tracking bioavailability, hydration and supplements through dynamic modeling and real-time charts.'
+                },
+                platforms: ['ios'],
+                tags: {
+                    es: ['BioHacking', 'Biométrica', 'Salud', 'Rendimiento'],
+                    en: ['BioHacking', 'Biometrics', 'Health', 'Performance']
+                },
+                icon: 'apps/BioDecay/icon.png',
+                page: 'apps/BioDecay/',
+                links: {
+                    appStore: 'https://apps.apple.com/us/app/biodecay/id6766216955',
+                    macAppStore: ''
+                },
+                screenshots: {
+                    es: [
+                        'apps/BioDecay/ios/es/01.png',
+                        'apps/BioDecay/ios/es/02.png',
+                        'apps/BioDecay/ios/es/03.png'
+                    ],
+                    en: [
+                        'apps/BioDecay/ios/en/01.PNG',
+                        'apps/BioDecay/ios/en/02.png',
+                        'apps/BioDecay/ios/en/03.PNG'
+                    ]
+                }
+            },
             {
                 slug: 'falken-writer',
                 title: {

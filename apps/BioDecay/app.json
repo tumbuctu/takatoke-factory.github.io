@@ -1,0 +1,37 @@
+{
+  "slug": "biodecay",
+  "title": {
+    "es": "BioDecay",
+    "en": "BioDecay"
+  },
+  "subtitle": {
+    "es": "iOS",
+    "en": "iOS"
+  },
+  "shortDescription": {
+    "es": "Motor farmacocinetico de precision para monitorizar biodisponibilidad, hidratacion y suplementos mediante modelado dinamico y graficas en tiempo real.",
+    "en": "Precision pharmacokinetic engine for tracking bioavailability, hydration and supplements through dynamic modeling and real-time charts."
+  },
+  "description": {
+    "es": "BioDecay: Ciencia y precision en tu suplementacion.\n\nOptimiza tu rendimiento mediante modelado metabolico avanzado.\n\nBioDecay no es una aplicacion de registro convencional. Es un motor de modelado farmacocinetico de alta precision disenado para quienes quieren entender la biodisponibilidad y el comportamiento metabolico de su cuerpo. Mediante modelos de compartimentos dinamicos, la app visualiza en tiempo real como interactuan la hidratacion, la cafeina y tus suplementos clave dentro de tu organismo.\n\nCaracteristicas principales\n\nModelado metabolico en tiempo real: visualiza curvas de absorcion y decaimiento personalizadas para agua, cafeina, creatina, magnesio y proteina.\n\nBio-interaccion dinamica: el motor se calibra segun tu estado fisiologico actual y ajusta la tasa de eliminacion renal cuando detecta deshidratacion o ingestas elevadas de proteina.\n\nPlanes de rendimiento personalizados: configura umbrales de seguridad y objetivos diarios para salud general, hipertrofia, definicion, resistencia y rendimiento.\n\nAnalisis historico y calendario integrado: gestiona tu historial de ingestas y revisa patrones en fechas anteriores.\n\nReportes profesionales en PDF: exporta informes detallados de 30 dias con niveles, tendencias de consumo y cumplimiento de objetivos.\n\nCalibracion por contexto externo: incorpora temperatura ambiente, peso, sexo y habitos de salud para calcular con mas precision la perdida de liquidos y la tasa metabolica.\n\nLleva tu control metabolico al siguiente nivel. Descarga BioDecay y transforma los datos en resultados.",
+    "en": "BioDecay: science-driven supplement optimization.\n\nMaster your body's chemistry with clinical precision.\n\nBioDecay is far more than a standard tracking app. It is a high-precision pharmacokinetic modeling engine designed for users who want a deeper understanding of bioavailability and metabolic behavior. Using dynamic compartmental models, the app visualizes in real time how hydration, caffeine and key supplements interact within your physiology.\n\nKey features\n\nReal-time metabolic modeling: visualize personalized absorption and decay curves for water, caffeine, creatine, magnesium and protein.\n\nDynamic bio-interaction: the engine calibrates around your current physiological state and adjusts renal clearance when it detects dehydration or high protein intake.\n\nPersonalized performance plans: configure safety thresholds and daily goals for general health, hypertrophy, definition, endurance and performance.\n\nHistorical analysis and integrated calendar: manage your intake history and review patterns on previous dates.\n\nProfessional PDF reporting: export detailed 30-day reports with concentration levels, consumption trends and goal compliance.\n\nEnvironmental context integration: incorporates ambient temperature, weight, biological sex and health habits to calculate fluid loss and metabolic rates more accurately.\n\nStop guessing. Start optimizing. Download BioDecay and turn data into peak performance."
+  },
+  "platforms": ["ios"],
+  "tags": {
+    "es": ["BioHacking", "Biometrica", "Salud", "Rendimiento"],
+    "en": ["BioHacking", "Biometrics", "Health", "Performance"]
+  },
+  "links": {
+    "appStore": "https://apps.apple.com/us/app/biodecay/id6766216955",
+    "macAppStore": ""
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ios": {
+        "es": ["ios/es/01.png", "ios/es/02.png", "ios/es/03.png", "ios/es/04.png", "ios/es/05.png", "ios/es/06.png", "ios/es/07.png", "ios/es/08.png"],
+        "en": ["ios/en/01.PNG", "ios/en/02.png", "ios/en/03.PNG", "ios/en/04.PNG", "ios/en/05.PNG", "ios/en/06.PNG", "ios/en/07.PNG", "ios/en/08.PNG"]
+      }
+    }
+  }
+}

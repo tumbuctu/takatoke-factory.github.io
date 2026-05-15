@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" style="background:#070a12;color-scheme:dark;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WhoAmI de Takatoke Factory: origen, stack evolutivo, hardware, inspiracion y filosofia detras de sus apps.">
-    <title>WhoAmI | Takatoke Factory</title>
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -23,6 +21,12 @@
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             -webkit-font-smoothing: antialiased;
             text-rendering: geometricPrecision;
+        }
+
+        body[data-loading] .site-header,
+        body[data-loading] .page,
+        body[data-loading] .site-footer {
+            opacity: 0;
         }
 
         a {
@@ -235,8 +239,11 @@
             }
         }
     </style>
+    <meta name="description" content="WhoAmI de Takatoke Factory: origen, stack evolutivo, hardware, inspiracion y filosofia detras de sus apps.">
+    <link rel="preload" as="image" href="stormtrooper.jpg">
+    <title>WhoAmI | Takatoke Factory</title>
 </head>
-<body>
+<body data-loading style="margin:0;background:#070a12;color:#f1f5f9;">
     <header class="site-header">
         <nav class="nav" aria-label="Navegación principal">
             <div class="brand-group">
@@ -329,6 +336,8 @@
             document.querySelectorAll('.language-button').forEach((button) => {
                 button.classList.toggle('is-active', button.dataset.lang === lang);
             });
+
+            document.body.removeAttribute('data-loading');
         };
 
         document.querySelectorAll('.language-button').forEach((button) => {

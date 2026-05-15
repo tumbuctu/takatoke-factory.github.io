@@ -1,0 +1,41 @@
+{
+  "slug": "astroguide",
+  "title": {
+    "es": "AstroGuide",
+    "en": "AstroGuide"
+  },
+  "subtitle": {
+    "es": "iOS y iPadOS",
+    "en": "iOS and iPadOS"
+  },
+  "shortDescription": {
+    "es": "Planifica eventos astronomicos, consulta visibilidad, recibe recordatorios y guarda observaciones con fotos en tu diario sincronizado por iCloud.",
+    "en": "Plan astronomical events, check visibility, get reminders, and save observations with photos in your iCloud-synced logbook."
+  },
+  "description": {
+    "es": "AstroGuide es una app para planificar, fotografiar y recordar tus sesiones de observacion astronomica.\n\nConsulta proximos eventos como eclipses, lluvias de meteoros, conjunciones, oposiciones planetarias y fases lunares. Cada evento incluye informacion practica para ayudarte a decidir cuando observar, que esperar y como preparar tu equipo.\n\nLa app combina calendario astronomico, mapas de visibilidad, recordatorios y una guia de astrofotografia integrada. Para cada evento encontraras recomendaciones de apertura, ISO, velocidad de obturacion y equipo sugerido, como tripode, telescopio o gran angular.\n\nTambien incluye un diario de observacion donde puedes guardar tus sesiones, anadir fotos, anotar el equipo utilizado, registrar condiciones del cielo y conservar metadatos utiles como fecha, ubicacion y fase lunar. Tus observaciones, eventos personalizados y recordatorios pueden sincronizarse mediante iCloud entre tus dispositivos.\n\nFunciones principales:\n\n- Calendario de eventos astronomicos.\n- Secciones separadas para eventos destacados y fases lunares.\n- Mapas de visibilidad cuando hay datos disponibles.\n- Guia de fotografia para cada evento.\n- Recordatorios configurables.\n- Diario de observacion con fotos y notas.\n- Eventos personalizados.\n- Sincronizacion con iCloud.\n- Modo Nocturno Real con tonos rojos para observacion en oscuridad.\n- Interfaz optimizada para iPhone y iPad.\n\nAstroGuide esta pensada para observadores, fotografos nocturnos y aficionados a la astronomia que quieren planificar mejor cada salida al cielo.",
+    "en": "AstroGuide is an app for planning, photographing, and remembering your astronomy observation sessions.\n\nExplore upcoming events such as eclipses, meteor showers, conjunctions, planetary oppositions, and Moon phases. Each event includes practical information to help you decide when to observe, what to expect, and how to prepare your gear.\n\nThe app combines an astronomical calendar, visibility maps, reminders, and an integrated astrophotography guide. For each event, you will find suggested aperture, ISO, shutter speed, and recommended equipment such as tripod, telescope, or wide-angle lens.\n\nAstroGuide also includes an observation logbook where you can save your sessions, attach photos, record the gear you used, note sky conditions, and keep useful metadata such as date, location, and Moon phase. Your observations, custom events, and reminders can sync across devices with iCloud.\n\nMain features:\n\n- Astronomical event calendar.\n- Separate sections for major events and Moon phases.\n- Visibility maps when data is available.\n- Photography guide for each event.\n- Configurable reminders.\n- Observation logbook with photos and notes.\n- Custom events.\n- iCloud sync.\n- Real Night Mode with deep red accents for dark-sky use.\n- Optimized interface for iPhone and iPad.\n\nAstroGuide is designed for observers, night photographers, and astronomy enthusiasts who want to plan each night-sky session with more confidence."
+  },
+  "platforms": ["ios", "ipados"],
+  "tags": {
+    "es": ["Astronomia", "Cielo", "Educacion"],
+    "en": ["Astronomy", "Sky", "Education"]
+  },
+  "links": {
+    "appStore": "https://apps.apple.com/us/app/astroguide/id6769490676",
+    "macAppStore": ""
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ios": {
+        "es": ["ios/es/01.png", "ios/es/02.png", "ios/es/03.png", "ios/es/04.png", "ios/es/05.png", "ios/es/06.png", "ios/es/07.png", "ios/es/08.png", "ios/es/09.png", "ios/es/10.png"],
+        "en": ["ios/en/01.png", "ios/en/02.png", "ios/en/03.png", "ios/en/04.png", "ios/en/05.png", "ios/en/06.png", "ios/en/07.png", "ios/en/08.png", "ios/en/09.png", "ios/en/10.png", "ios/en/11.png"]
+      },
+      "ipados": {
+        "es": ["ipados/es/01.png", "ipados/es/02.png", "ipados/es/03.png", "ipados/es/04.png", "ipados/es/05.png", "ipados/es/06.png", "ipados/es/07.png", "ipados/es/08.png", "ipados/es/09.png", "ipados/es/10.png", "ipados/es/11.png"],
+        "en": ["ipados/en/01.png", "ipados/en/02.png", "ipados/en/03.png", "ipados/en/04.png", "ipados/en/05.png", "ipados/en/06.png", "ipados/en/07.png", "ipados/en/08.png", "ipados/en/09.png", "ipados/en/10.png", "ipados/en/11.png"]
+      }
+    }
+  }
+}

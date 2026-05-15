@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WhoAmI de Takatoke Factory: origen, stack evolutivo, hardware, inspiracion y filosofia detras de sus apps.">
     <title>WhoAmI | Takatoke Factory</title>
+    <style>
+        html {
+            background: #070a12;
+        }
+
+        [data-cloak] {
+            visibility: hidden;
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -21,12 +30,12 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#070a12] font-sans text-slate-100 antialiased">
+<body class="bg-[#070a12] font-sans text-slate-100 antialiased" data-cloak>
     <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#070a12]/85 backdrop-blur-xl">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
-            <div class="flex items-center gap-5 sm:gap-6">
+            <div class="flex items-baseline gap-8 sm:gap-10">
                 <a href="index.html" class="text-lg font-bold tracking-tight text-white sm:text-xl">Takatoke Factory</a>
-                <a href="whoami.html" class="text-sm font-semibold text-white">WhoAmI</a>
+                <a href="whoami.html" class="text-base font-semibold text-white" data-i18n="navWhoAmI">WhoAmI</a>
             </div>
 
             <div class="grid grid-cols-2 rounded-full border border-slate-700 bg-slate-900 p-1 text-xs font-semibold" aria-label="Selector de idioma">
@@ -67,11 +76,12 @@
     <script>
         const COPY = {
             es: {
+                navWhoAmI: 'WhoAmI',
                 originLabel: 'Origen:',
                 originText: 'Los días del PRINT "HELLO WORLD" en GW-Basic.',
                 stackLabel: 'Stack Evolutivo:',
                 hardwareLabel: 'Hardware:',
-                hardwareText: 'MacBook Air M2 (8GB RAM). Sobreviviendo a los builds de Xcode un día a la vez.',
+                hardwareText: 'MacBook Air M2 (8GB RAM). Sobreviviendo a los builds de Xcode una vez al día.',
                 inspirationLabel: 'Inspiración:',
                 inspirationText: 'Una mezcla caótica de necesidades personales, sugerencias de amigos y el feed infinito de Reddit y Menéame.',
                 bioOne: 'Soy un nostálgico ochentero que cree que la mejor app es la que soluciona un problema real, por pequeño que sea. En mi estantería descansa un casco de Stormtrooper; de momento es solo decoración, pero si Xcode sigue consumiendo mi RAM a este ritmo, no descarto unirme al Imperio para terminar el siguiente proyecto.',
@@ -79,11 +89,12 @@
                 rights: 'Todos los derechos reservados.'
             },
             en: {
+                navWhoAmI: 'WhoAmI',
                 originLabel: 'Origin:',
                 originText: 'The days of PRINT "HELLO WORLD" in GW-Basic.',
                 stackLabel: 'Evolutionary Stack:',
                 hardwareLabel: 'Hardware:',
-                hardwareText: 'MacBook Air M2 (8GB RAM). Surviving Xcode builds one day at a time.',
+                hardwareText: 'MacBook Air M2 (8GB RAM). Surviving Xcode builds once a day.',
                 inspirationLabel: 'Inspiration:',
                 inspirationText: 'A chaotic mix of personal needs, friends’ suggestions, and the infinite feeds of Reddit and Menéame.',
                 bioOne: 'I am an eighties nostalgist who believes the best app is the one that solves a real problem, however small. A Stormtrooper helmet rests on my shelf; for now it is just decoration, but if Xcode keeps eating my RAM at this pace, joining the Empire to finish the next project is not entirely off the table.',
@@ -116,6 +127,8 @@
                 button.classList.toggle('shadow-sm', isActive);
                 button.classList.toggle('text-slate-500', !isActive);
             });
+
+            document.body.removeAttribute('data-cloak');
         };
 
         document.querySelectorAll('.language-button').forEach((button) => {

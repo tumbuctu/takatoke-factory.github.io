@@ -83,7 +83,8 @@
             transition: color 160ms ease;
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link.active {
             color: #ffffff;
         }
 
@@ -116,26 +117,18 @@
         }
 
         .page {
-            max-width: 56rem;
+            max-width: 72rem;
             margin: 0 auto;
             padding: 4rem 1.25rem;
         }
 
-        .card {
-            overflow: hidden;
-            border-radius: 1rem;
-            background: #ffffff;
-            color: #020617;
-            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
-        }
-
-        .content {
-            padding: 1.5rem;
+        .intro {
+            max-width: 42rem;
         }
 
         .eyebrow {
             margin: 0;
-            color: #64748b;
+            color: #94a3b8;
             font-size: 0.875rem;
             font-weight: 700;
             letter-spacing: 0.2em;
@@ -144,57 +137,63 @@
 
         h1 {
             margin: 0.75rem 0 0;
-            color: #020617;
+            color: #ffffff;
             font-size: 2.25rem;
             font-weight: 600;
             letter-spacing: -0.025em;
             line-height: 1.05;
         }
 
-        .facts {
-            display: grid;
-            gap: 1.25rem;
-            margin-top: 2.5rem;
-            color: #334155;
-            font-size: 1rem;
+        .intro-text {
+            margin: 1.25rem 0 0;
+            color: #cbd5e1;
+            font-size: 1.125rem;
             line-height: 1.75;
         }
 
-        .facts p,
-        .bio p {
-            margin: 0;
+        .posts {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
         }
 
-        .label {
-            color: #020617;
-            font-weight: 700;
-        }
-
-        .bio {
-            margin-top: 2.5rem;
-            color: #334155;
-            font-size: 1.125rem;
-            line-height: 1.78;
-        }
-
-        .image-wrap {
-            background: #f1f5f9;
-            padding: 1rem;
-        }
-
-        .stormtrooper {
+        .post {
             display: block;
-            width: 100%;
-            max-width: 42rem;
-            margin: 0 auto;
+            border: 1px solid #e2e8f0;
             border-radius: 1rem;
-            object-fit: cover;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
-            transition: transform 300ms ease;
+            background: #ffffff;
+            color: #020617;
+            padding: 1.5rem;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+            transition: transform 180ms ease, box-shadow 180ms ease;
         }
 
-        .stormtrooper:hover {
-            transform: scale(1.025);
+        .post:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+        }
+
+        .post-meta {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .post h2 {
+            margin: 0.75rem 0 0;
+            color: #020617;
+            font-size: 1.5rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .post p {
+            margin: 0.75rem 0 0;
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .site-footer {
@@ -228,16 +227,12 @@
                 padding: 5rem 1.5rem;
             }
 
-            .content {
-                padding: 2rem;
-            }
-
-            .image-wrap {
-                padding: 1.5rem;
-            }
-
             h1 {
                 font-size: 3.75rem;
+            }
+
+            .posts {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -249,15 +244,10 @@
             .page {
                 padding-inline: 2rem;
             }
-
-            .content {
-                padding: 2.5rem;
-            }
         }
     </style>
-    <meta name="description" content="WhoAmI de Takatoke Factory: origen, stack evolutivo, hardware, inspiracion y filosofia detras de sus apps.">
-    <link rel="preload" as="image" href="stormtrooper.jpg">
-    <title>WhoAmI | Takatoke Factory</title>
+    <meta name="description" content="Blog de Takatoke Factory con noticias, cambios y actualizaciones breves sobre sus aplicaciones para iOS, iPadOS y macOS.">
+    <title>Blog | Takatoke Factory</title>
 </head>
 <body data-loading style="margin:0;background:#070a12;color:#f1f5f9;">
     <header class="site-header">
@@ -268,7 +258,7 @@
                     <span>Takatoke Factory</span>
                 </a>
                 <a href="whoami.html" class="nav-link" data-i18n="navWhoAmI">WhoAmI</a>
-                <a href="blog.html" class="nav-link" data-i18n="navBlog">Blog</a>
+                <a href="blog.html" class="nav-link active" data-i18n="navBlog">Blog</a>
             </div>
 
             <div class="language-switcher" aria-label="Selector de idioma">
@@ -279,27 +269,25 @@
     </header>
 
     <main class="page">
-        <article class="card">
-            <div class="content">
-                <p class="eyebrow">Takatoke Factory</p>
-                <h1>WHOAMI</h1>
+        <section class="intro">
+            <p class="eyebrow">Takatoke Factory</p>
+            <h1 data-i18n="blogTitle">Blog</h1>
+            <p class="intro-text" data-i18n="blogIntro">Notas cortas sobre actualizaciones, decisiones de diseño y novedades de las apps.</p>
+        </section>
 
-                <div class="facts">
-                    <p><span class="label" data-i18n="originLabel">Origen:</span> <span data-i18n="originText">Los días del PRINT "HELLO WORLD" en GW-Basic.</span></p>
-                    <p><span class="label" data-i18n="stackLabel">Stack Evolutivo:</span> <span>QBasic &rarr; Pascal &rarr; Visual Basic &rarr; [HIATUS] &rarr; Objective-C &rarr; SwiftUI.</span></p>
-                    <p><span class="label" data-i18n="hardwareLabel">Hardware:</span> <span data-i18n="hardwareText">MacBook Air M2 (8GB RAM). Sobreviviendo a los builds de Xcode una vez al día.</span></p>
-                    <p><span class="label" data-i18n="inspirationLabel">Inspiración:</span> <span data-i18n="inspirationText">Una mezcla caótica de necesidades personales, sugerencias de amigos y el feed infinito de Reddit y Menéame.</span></p>
-                </div>
+        <section class="posts" aria-label="Blog posts">
+            <article class="post">
+                <p class="post-meta" data-i18n="postOneMeta">Actualización · Apps</p>
+                <h2 data-i18n="postOneTitle">Nuevo espacio para novedades de Takatoke Factory</h2>
+                <p data-i18n="postOneText">Este blog servirá para publicar cambios pequeños, mejoras de las apps y notas rápidas sobre lo que se está construyendo.</p>
+            </article>
 
-                <div class="bio">
-                    <p data-i18n="bioOne">Soy un nostálgico ochentero que cree que la mejor app es la que soluciona un problema real, por pequeño que sea. En mi estantería descansa un casco de Stormtrooper; de momento es solo decoración, pero si Xcode sigue consumiendo mi RAM a este ritmo, no descarto unirme al Imperio para terminar el siguiente proyecto.</p>
-                </div>
-            </div>
-
-            <div class="image-wrap">
-                <img src="stormtrooper.jpg" alt="Casco de Stormtrooper decorativo en la estantería de Takatoke Factory" data-i18n-alt="stormAlt" class="stormtrooper">
-            </div>
-        </article>
+            <article class="post">
+                <p class="post-meta" data-i18n="postTwoMeta">Portfolio · iOS, iPadOS y macOS</p>
+                <h2 data-i18n="postTwoTitle">Apps vivas, cambios frecuentes</h2>
+                <p data-i18n="postTwoText">Cada app tendrá su propio ritmo: nuevas capturas, ajustes de descripción, funciones y detalles de publicación irán apareciendo aquí.</p>
+            </article>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -311,29 +299,27 @@
             es: {
                 navWhoAmI: 'WhoAmI',
                 navBlog: 'Blog',
-                originLabel: 'Origen:',
-                originText: 'Los días del PRINT "HELLO WORLD" en GW-Basic.',
-                stackLabel: 'Stack Evolutivo:',
-                hardwareLabel: 'Hardware:',
-                hardwareText: 'MacBook Air M2 (8GB RAM). Sobreviviendo a los builds de Xcode una vez al día.',
-                inspirationLabel: 'Inspiración:',
-                inspirationText: 'Una mezcla caótica de necesidades personales, sugerencias de amigos y el feed infinito de Reddit y Menéame.',
-                bioOne: 'Soy un nostálgico ochentero que cree que la mejor app es la que soluciona un problema real, por pequeño que sea. En mi estantería descansa un casco de Stormtrooper; de momento es solo decoración, pero si Xcode sigue consumiendo mi RAM a este ritmo, no descarto unirme al Imperio para terminar el siguiente proyecto.',
-                stormAlt: 'Casco de Stormtrooper decorativo en la estantería de Takatoke Factory',
+                blogTitle: 'Blog',
+                blogIntro: 'Notas cortas sobre actualizaciones, decisiones de diseño y novedades de las apps.',
+                postOneMeta: 'Actualización · Apps',
+                postOneTitle: 'Nuevo espacio para novedades de Takatoke Factory',
+                postOneText: 'Este blog servirá para publicar cambios pequeños, mejoras de las apps y notas rápidas sobre lo que se está construyendo.',
+                postTwoMeta: 'Portfolio · iOS, iPadOS y macOS',
+                postTwoTitle: 'Apps vivas, cambios frecuentes',
+                postTwoText: 'Cada app tendrá su propio ritmo: nuevas capturas, ajustes de descripción, funciones y detalles de publicación irán apareciendo aquí.',
                 rights: 'Todos los derechos reservados.'
             },
             en: {
                 navWhoAmI: 'WhoAmI',
                 navBlog: 'Blog',
-                originLabel: 'Origin:',
-                originText: 'The days of PRINT "HELLO WORLD" in GW-Basic.',
-                stackLabel: 'Evolutionary Stack:',
-                hardwareLabel: 'Hardware:',
-                hardwareText: 'MacBook Air M2 (8GB RAM). Surviving Xcode builds once a day.',
-                inspirationLabel: 'Inspiration:',
-                inspirationText: 'A chaotic mix of personal needs, friends’ suggestions, and the infinite feeds of Reddit and Menéame.',
-                bioOne: 'I am an eighties nostalgist who believes the best app is the one that solves a real problem, however small. A Stormtrooper helmet rests on my shelf; for now it is just decoration, but if Xcode keeps eating my RAM at this pace, joining the Empire to finish the next project is not entirely off the table.',
-                stormAlt: 'Decorative Stormtrooper helmet on the Takatoke Factory shelf',
+                blogTitle: 'Blog',
+                blogIntro: 'Short notes about updates, design decisions and news from the apps.',
+                postOneMeta: 'Update · Apps',
+                postOneTitle: 'A new place for Takatoke Factory updates',
+                postOneText: 'This blog will be used for small changes, app improvements and quick notes about what is being built.',
+                postTwoMeta: 'Portfolio · iOS, iPadOS and macOS',
+                postTwoTitle: 'Living apps, frequent changes',
+                postTwoText: 'Each app will have its own rhythm: new screenshots, description tweaks, features and release details will appear here.',
                 rights: 'All rights reserved.'
             }
         };
@@ -349,10 +335,6 @@
 
             document.querySelectorAll('[data-i18n]').forEach((element) => {
                 element.textContent = COPY[lang][element.dataset.i18n];
-            });
-
-            document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
-                element.alt = COPY[lang][element.dataset.i18nAlt];
             });
 
             document.querySelectorAll('.language-button').forEach((button) => {

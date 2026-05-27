@@ -1,0 +1,41 @@
+{
+  "slug": "studyflow",
+  "title": {
+    "es": "studyFlow",
+    "en": "studyFlow"
+  },
+  "subtitle": {
+    "es": "iOS y iPadOS",
+    "en": "iOS and iPadOS"
+  },
+  "shortDescription": {
+    "es": "Organiza proyectos, temas y contenido. Planifica tu estudio hasta el examen, sigue tu progreso diario y sincroniza StudyFlow con iCloud.",
+    "en": "Organize projects, topics, and content. Plan your study until exam day, track daily progress, and sync StudyFlow with iCloud."
+  },
+  "description": {
+    "es": "StudyFlow te ayuda a organizar tu estudio de forma clara, visual y eficiente.\n\nCrea proyectos para asignaturas, examenes, presentaciones, certificaciones o trabajos. Divide cada proyecto en temas, anade contenido, guarda adjuntos, marca prioridades y sigue tu progreso desde una pantalla principal disenada para trabajar cada dia con menos ruido y mas foco.\n\nCon el planificador de estudio puedes generar planes automaticos desde una fecha de comienzo hasta la fecha de examen o presentacion. StudyFlow reparte la carga segun tus dias disponibles, el tiempo estimado por tema y tus prioridades. Si terminas antes, anade sesiones de repaso para aprovechar los dias restantes.\n\nCaracteristicas principales:\n\n- Organizacion por proyectos y temas.\n- Plantillas para crear proyectos mas rapido.\n- Contenido por tipo: apuntes, ejercicios, practicas, presentaciones, resumenes, esquemas, bibliografia, notas y otros.\n- Adjuntos para guardar materiales relacionados.\n- Etiquetas de tema: urgente, repaso y facil.\n- Pantalla Hoy con progreso global, agenda diaria, vencimientos y recordatorios.\n- Planificador de estudio con fecha de comienzo, fecha de examen, dias disponibles y carga diaria.\n- Sesiones de repaso automaticas.\n- Calendarios de proyecto y tema.\n- Archivo de proyectos completados.\n- Exportacion de proyectos y planes de estudio a PDF.\n- Backup, exportacion e importacion de datos.\n- Sincronizacion con iCloud entre dispositivos.\n- Interfaz adaptada para iPhone y iPad.\n- Disponible en espanol e ingles.\n\nStudyFlow esta pensada para estudiantes que quieren tener todo el material bajo control, preparar examenes con tiempo y avanzar cada dia con una planificacion clara.",
+    "en": "StudyFlow helps you organize your study workflow in a clear, visual, and efficient way.\n\nCreate projects for subjects, exams, presentations, certifications, or assignments. Break each project into topics, add content, save attachments, mark priorities, and track your progress from a daily workspace designed to reduce noise and keep you focused.\n\nWith the study planner, you can generate automatic plans from a start date to an exam or presentation date. StudyFlow distributes the workload based on your available days, estimated time per topic, and priorities. If the main plan finishes early, it adds review sessions to make better use of the remaining days.\n\nMain features:\n\n- Organize by projects and topics.\n- Project templates for faster setup.\n- Content types: class notes, exercises, practice, presentations, summaries, outlines, bibliography, notes, and other.\n- Attachments for related study materials.\n- Topic labels: urgent, review, and easy.\n- Today screen with overall progress, daily agenda, deadlines, and reminders.\n- Study planner with start date, exam date, available days, and daily workload.\n- Automatic review sessions.\n- Project and topic calendars.\n- Archive for completed projects.\n- Export projects and study plans to PDF.\n- Backup, export, and import your data.\n- iCloud sync across devices.\n- Interface adapted for iPhone and iPad.\n- Available in English and Spanish.\n\nStudyFlow is built for students who want to keep their material under control, prepare exams with enough time, and move forward every day with a clear plan."
+  },
+  "platforms": ["ios", "ipados"],
+  "tags": {
+    "es": ["Productividad", "SwiftUI", "Planificador"],
+    "en": ["Productivity", "SwiftUI", "Planner"]
+  },
+  "links": {
+    "appStore": "https://apps.apple.com/us/app/studyflow/id6670703328",
+    "macAppStore": ""
+  },
+  "assets": {
+    "icon": "icon.png",
+    "screenshots": {
+      "ios": {
+        "es": ["ios/es/01.png", "ios/es/02.png", "ios/es/03.png", "ios/es/04.png", "ios/es/05.png", "ios/es/06.png", "ios/es/07.png", "ios/es/08.png", "ios/es/09.png", "ios/es/13.png", "ios/es/14.png", "ios/es/15.png"],
+        "en": ["ios/en/01.png", "ios/en/02.png", "ios/en/03.png", "ios/en/04.png", "ios/en/05.png", "ios/en/06.png", "ios/en/07.png", "ios/en/08.png", "ios/en/12.png", "ios/en/13.png", "ios/en/15.png"]
+      },
+      "ipados": {
+        "es": ["ipados/es/02.png", "ipados/es/03.png", "ipados/es/04.png", "ipados/es/05.png", "ipados/es/06.png", "ipados/es/07.png", "ipados/es/08.png", "ipados/es/09.png"],
+        "en": ["ipados/en/01.png", "ipados/en/02.png", "ipados/en/03.png", "ipados/en/04.png", "ipados/en/05.png", "ipados/en/06.png", "ipados/en/07.png", "ipados/en/08.png", "ipados/en/09.png", "ipados/en/10.png", "ipados/en/11.png", "ipados/en/12.png", "ipados/en/13.png"]
+      }
+    }
+  }
+}

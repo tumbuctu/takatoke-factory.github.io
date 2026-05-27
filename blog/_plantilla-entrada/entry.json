@@ -1,0 +1,35 @@
+{
+  "slug": "_plantilla-entrada",
+  "type": {
+    "es": "Actualizacion",
+    "en": "Update"
+  },
+  "date": "2026-05-27",
+  "title": {
+    "es": "Titulo de la entrada",
+    "en": "Post title"
+  },
+  "summary": {
+    "es": "Resumen corto para la tarjeta del blog.",
+    "en": "Short summary for the blog card."
+  },
+  "content": {
+    "es": "Contenido completo de la entrada en espanol. Puedes usar parrafos cortos separados por saltos de linea.",
+    "en": "Full post content in English. You can use short paragraphs separated by line breaks."
+  },
+  "apps": ["Nombre de la app relacionada"],
+  "tags": {
+    "es": ["Etiqueta", "Actualizacion"],
+    "en": ["Tag", "Update"]
+  },
+  "images": [
+    {
+      "src": "images/01.png",
+      "alt": {
+        "es": "Descripcion de la imagen para accesibilidad y SEO",
+        "en": "Image description for accessibility and SEO"
+      }
+    }
+  ],
+  "published": false
+}

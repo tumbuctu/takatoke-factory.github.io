@@ -33,6 +33,28 @@
             overflow-y: scroll;
             scrollbar-gutter: stable;
         }
+
+        .brand-short {
+            display: none;
+        }
+
+        .app-icon-rail {
+            scrollbar-width: none;
+        }
+
+        .app-icon-rail::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 639px) {
+            .brand-full {
+                display: none;
+            }
+
+            .brand-short {
+                display: inline;
+            }
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -42,10 +64,13 @@
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#070a12]/85 backdrop-blur-xl">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
-            <div class="flex items-center gap-5 sm:gap-8">
-                <a href="#" class="flex items-center gap-3" aria-label="Takatoke Factory inicio">
-                    <img src="logo_takatoke.png" alt="Logo de Takatoke Factory" class="h-10 w-10 shrink-0 rounded-xl object-contain sm:h-11 sm:w-11">
-                    <span class="text-lg font-bold tracking-tight text-white sm:text-xl">Takatoke Factory</span>
+            <div class="flex items-center gap-3 sm:gap-8">
+                <a href="#" class="flex items-center gap-2 sm:gap-3" aria-label="Takatoke Factory inicio">
+                    <img src="logo_takatoke.png" alt="Logo de Takatoke Factory" class="h-9 w-9 shrink-0 rounded-xl object-contain sm:h-11 sm:w-11">
+                    <span class="text-lg font-bold tracking-tight text-white sm:text-xl">
+                        <span class="brand-full">Takatoke Factory</span>
+                        <span class="brand-short">Takatoke</span>
+                    </span>
                 </a>
                 <a href="whoami.html" class="text-base font-semibold text-slate-300 transition hover:text-white" data-i18n="navWhoAmI">WhoAmI</a>
                 <a href="blog.html" class="text-base font-semibold text-slate-300 transition hover:text-white" data-i18n="navBlog">Blog</a>
@@ -69,6 +94,8 @@
         <!-- Portfolio -->
         <section id="portfolio" class="bg-[#070a12] py-16 sm:py-20">
             <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+                <div id="app-icon-rail" class="app-icon-rail mb-10 overflow-x-auto pb-2"></div>
+
                 <div class="max-w-2xl">
                     <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-5xl" data-i18n="portfolioTitle">Apps</h2>
                 </div>
@@ -389,6 +416,20 @@
             return buttons.join('');
         };
 
+        const renderAppIconRail = (lang) => {
+            const appIconRail = document.querySelector('#app-icon-rail');
+
+            appIconRail.innerHTML = `
+                <div class="mx-auto flex w-max min-w-full items-center justify-center gap-4 sm:gap-5">
+                    ${APPS.map((app) => `
+                        <a href="${app.page}" class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white p-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft sm:h-20 sm:w-20" aria-label="${getText(app.title, lang)}">
+                            <img src="${app.icon}" alt="" class="h-full w-full rounded-xl object-cover">
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        };
+
         const renderPortfolio = (lang) => {
             const portfolioGrid = document.querySelector('#portfolio-grid');
 
@@ -446,6 +487,7 @@
                 button.classList.toggle('text-slate-500', !isActive);
             });
 
+            renderAppIconRail(lang);
             renderPortfolio(lang);
             lucide.createIcons();
             document.body.removeAttribute('data-cloak');

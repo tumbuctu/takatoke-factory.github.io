@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es" style="background:#070a12;color-scheme:dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: #070a12;
+            color-scheme: dark;
+            overflow-y: scroll;
+            scrollbar-gutter: stable;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: #070a12;
+            color: #f1f5f9;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
+        }
+
+        body[data-loading] .site-header,
+        body[data-loading] .page,
+        body[data-loading] .site-footer {
+            opacity: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+            background: rgba(7, 10, 18, 0.85);
+            backdrop-filter: blur(24px);
+        }
+
+        .nav {
+            display: flex;
+            max-width: 72rem;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+        }
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .brand-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            flex: 0 0 auto;
+            border-radius: 0.75rem;
+            object-fit: contain;
+        }
+
+        .brand-short {
+            display: none;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 160ms ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ffffff;
+        }
+
+        .language-switcher {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border: 1px solid #334155;
+            border-radius: 999px;
+            background: #0f172a;
+            padding: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .language-button {
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: #94a3b8;
+            cursor: pointer;
+            font: inherit;
+            padding: 0.375rem 0.75rem;
+            transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .language-button.is-active {
+            background: #ffffff;
+            color: #020617;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+        }
+
+        .page {
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 4rem 1.25rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            transition: color 160ms ease;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        .post-shell {
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            background: #ffffff;
+            color: #020617;
+            padding: 1.5rem;
+            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+        }
+
+        .post-meta {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 0.75rem 0 0;
+            color: #020617;
+            font-size: 2.25rem;
+            font-weight: 650;
+            letter-spacing: -0.025em;
+            line-height: 1.08;
+        }
+
+        .summary {
+            margin: 1rem 0 0;
+            color: #475569;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .post-tag {
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+        }
+
+        .content {
+            margin-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .content p {
+            margin: 0 0 1.25rem;
+            color: #334155;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .content pre {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 0.875rem;
+            background: #020617;
+            color: #e2e8f0;
+            padding: 1rem;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .content code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        }
+
+        .site-footer {
+            border-top: 1px solid #1e293b;
+            background: #070a12;
+            color: #94a3b8;
+            padding: 2rem 1.25rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .nav {
+                padding-inline: 1.5rem;
+            }
+
+            .brand-group {
+                gap: 2rem;
+            }
+
+            .brand {
+                gap: 0.75rem;
+                font-size: 1.25rem;
+            }
+
+            .brand-logo {
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+
+            .page {
+                padding: 5rem 1.5rem;
+            }
+
+            .post-shell {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 3.25rem;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .brand-logo {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+
+            .brand-full {
+                display: none;
+            }
+
+            .brand-short {
+                display: inline;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .nav {
+                padding-inline: 2rem;
+            }
+
+            .page {
+                padding-inline: 2rem;
+            }
+        }
+    </style>
+    <meta name="description" content="Cómo Falken Writer corrigió la alineación de números de línea usando geometría real de TextKit y AppKit.">
+    <title>Fixing Line Numbers in Falken Writer | Takatoke Factory</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Fixing Line Numbers in Falken Writer",
+        "description": "Cómo Falken Writer corrigió la alineación de números de línea usando geometría real de TextKit y AppKit.",
+        "datePublished": "2026-05-02",
+        "dateModified": "2026-05-02",
+        "url": "https://takatokefactory.com/blog/Entrada1/",
+        "mainEntityOfPage": "https://takatokefactory.com/blog/Entrada1/",
+        "author": {
+            "@type": "Organization",
+            "name": "Takatoke Factory"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Takatoke Factory",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://takatokefactory.com/logo_takatoke.png"
+            }
+        }
+    }
+    </script>
+</head>
+<body data-loading style="margin:0;background:#070a12;color:#f1f5f9;">
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegación principal">
+            <div class="brand-group">
+                <a href="../../index.html" class="brand">
+                    <img src="../../logo_takatoke.png" alt="Logo de Takatoke Factory" class="brand-logo">
+                    <span>
+                        <span class="brand-full">Takatoke Factory</span>
+                        <span class="brand-short">Takatoke</span>
+                    </span>
+                </a>
+                <a href="../../whoami.html" class="nav-link" data-i18n="navWhoAmI">WhoAmI</a>
+                <a href="../../blog.html" class="nav-link active" data-i18n="navBlog">Blog</a>
+            </div>
+
+            <div class="language-switcher" aria-label="Selector de idioma">
+                <button type="button" class="language-button" data-lang="es">ES</button>
+                <button type="button" class="language-button" data-lang="en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <a href="../../blog.html" class="back-link" data-i18n="backToBlog">Volver al Blog</a>
+
+        <article class="post-shell">
+            <p class="post-meta" id="postMeta"></p>
+            <h1 id="postTitle"></h1>
+            <p class="summary" id="postSummary"></p>
+            <div class="post-tags" id="postTags"></div>
+            <div class="content" id="postContent"></div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        &copy; 2026 Takatoke Factory. <span data-i18n="rights">Todos los derechos reservados.</span>
+    </footer>
+
+    <script>
+        const COPY = {
+            es: {
+                navWhoAmI: 'WhoAmI',
+                navBlog: 'Blog',
+                backToBlog: 'Volver al Blog',
+                rights: 'Todos los derechos reservados.'
+            },
+            en: {
+                navWhoAmI: 'WhoAmI',
+                navBlog: 'Blog',
+                backToBlog: 'Back to Blog',
+                rights: 'All rights reserved.'
+            }
+        };
+
+        const POST = {
+            type: {
+                es: 'Actualización',
+                en: 'Update'
+            },
+            date: '2026-05-02',
+            title: {
+                es: 'BLOG 1: Corrigiendo los números de línea en Falken Writer',
+                en: 'Fixing Line Numbers in Falken Writer'
+            },
+            summary: {
+                es: 'Uno de los errores más complejos con los que me topé mientras desarrollaba Falken Writer fue algo que, al principio, suena sencillo: mantener los números de línea visualmente alineados con el texto.',
+                en: 'One of the trickiest bugs I ran into while building Falken Writer was something that sounds simple at first: keeping line numbers visually aligned with the text.'
+            },
+            content: {
+                es: 'Uno de los errores más complejos con los que me topé mientras desarrollaba Falken Writer fue algo que, al principio, suena sencillo: mantener los números de línea visualmente alineados con el texto.\n\nEl editor es compatible con texto enriquecido, diferentes tamaños de fuente, estilos en negrita, líneas con ajuste automático (wrapped) y un margen lateral (gutter) inspirado en la terminal con los números de línea. La primera implementación funcionaba bien siempre y cuando cada línea tuviera el mismo tamaño de fuente y cada salto de línea fuera explícito. Sin embargo, en cuanto una línea larga se ajustaba automáticamente o una línea usaba un tamaño de fuente más grande, el margen empezaba a desalinearse.\n\nEl problema era que los números de línea se renderizaban de forma separada al diseño (layout) real del texto. Un simple VStack o un margen basado en texto plano puede contar las líneas, pero no conoce la posición real en píxeles de cada línea renderizada. El texto enriquecido empeora esto porque cada línea puede tener una altura diferente.\n\nAl principio, intenté ajustar el espaciado manualmente. Luego, intenté recalcular las alturas de las líneas en función del tamaño de la fuente. Eso ayudó en algunos casos, pero no era confiable. La solución real fue dejar de adivinar.\n\nEn macOS, la solución fue utilizar la información nativa de diseño de texto del editor desde AppKit. Ahora, el margen lee la geometría real de los fragmentos de línea del sistema de texto y dibuja cada número exactamente en el mismo centro vertical que su línea renderizada correspondiente.\n\nEn el iPad, la primera versión funcional utilizaba UITextView y NSLayoutManager, pero eso introdujo otro problema: acceder a layoutManager obligaba a UITextView a entrar en el modo de compatibilidad de TextKit 1. Esto rompía la selección de texto en vivo al arrastrar el dedo en el iPad; la selección existía internamente, pero el resaltado no se renderizaba correctamente hasta que se levantaba el dedo.\n\nLa solución definitiva en el iPad fue crear la vista de texto explícitamente con TextKit 2:\n\n```swift\nprivate let editorView = UITextView(usingTextLayoutManager: true)\n```\n\nA partir de ahí, el margen dejó de usar layoutManager y, en su lugar, comenzó a calcular las posiciones de las líneas a través de TextKit 2:\n\n```swift\ntextLayoutManager.enumerateTextLayoutFragments(\n    from: textContentManager.documentRange.location,\n    options: [.ensuresLayout, .ensuresExtraLineFragment]\n) { fragment in\n    fragment.textLineFragments.forEach { lineFragment in\n        let bounds = lineFragment.typographicBounds\n        // Use this geometry to place the line number\n    }\n    return true\n}\n```\n\nEsto hizo que los números de línea siguieran el diseño renderizado real en lugar de uno estimado. Las líneas ajustadas automáticamente, los encabezados más grandes, el texto en negrita y las líneas vacías al final ahora generan entradas en el margen correctamente alineadas.\n\nLa lección importante fue que un editor serio no puede simular la geometría de las líneas. Si el sistema de texto ya sabe dónde está cada línea renderizada, el margen debe usar esos datos directamente. Una vez que los números de línea pasaron a ser guiados por fragmentos de diseño reales de TextKit/AppKit en lugar de cálculos manuales, el editor finalmente se comportó como debía tanto en Mac como en iPad.',
+                en: 'One of the trickiest bugs I ran into while building Falken Writer was something that sounds simple at first: keeping line numbers visually aligned with the text.\n\nThe editor supports rich text, different font sizes, bold styles, wrapped lines, and a terminal-inspired gutter with line numbers. The first implementation worked fine as long as every line had the same font size and every line break was explicit. But once a long line wrapped automatically, or one line used a larger font size, the gutter started drifting.\n\nThe problem was that the line numbers were being rendered separately from the actual text layout. A simple VStack or plain text-based gutter can count lines, but it does not know the real pixel position of each rendered line. Rich text makes this worse because every line can have a different height.\n\nAt first, I tried adjusting spacing manually. Then I tried recalculating line heights based on font size. That helped in some cases, but it was not reliable. The real fix was to stop guessing.\n\nOn macOS, the solution was to use the editor\u0027s native text layout information from AppKit. The gutter now reads the actual line fragment geometry from the text system and draws each number at the same vertical center as its corresponding rendered line.\n\nOn iPad, the first working version used UITextView and NSLayoutManager, but that introduced another issue: accessing layoutManager forced UITextView into TextKit 1 compatibility mode. That broke live text selection while dragging on iPad. The selection existed internally, but the highlight did not render correctly until the finger was lifted.\n\nThe final iPad solution was to create the text view explicitly with TextKit 2:\n\n```swift\nprivate let editorView = UITextView(usingTextLayoutManager: true)\n```\n\nThen the gutter stopped using layoutManager and instead calculated line positions through TextKit 2:\n\n```swift\ntextLayoutManager.enumerateTextLayoutFragments(\n    from: textContentManager.documentRange.location,\n    options: [.ensuresLayout, .ensuresExtraLineFragment]\n) { fragment in\n    fragment.textLineFragments.forEach { lineFragment in\n        let bounds = lineFragment.typographicBounds\n        // Use this geometry to place the line number\n    }\n    return true\n}\n```\n\nThis made the line numbers follow the actual rendered layout instead of an estimated one. Wrapped lines, larger headings, bold text, and trailing empty lines now all produce correctly aligned gutter entries.\n\nThe important lesson was that a serious editor cannot fake line geometry. If the text system already knows where every rendered line is, the gutter should use that data directly. Once the line numbers were driven by real TextKit/AppKit layout fragments instead of manual calculations, the editor finally behaved like it should on both Mac and iPad.'
+            },
+            tags: {
+                es: ['Fix', 'Actualización'],
+                en: ['Fix', 'Update']
+            }
+        };
+
+        const escapeHtml = (value) => value
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#039;');
+
+        const renderContent = (content) => content
+            .split(/```(?:swift)?\n([\s\S]*?)```/g)
+            .map((part, index) => {
+                if (index % 2 === 1) {
+                    return `<pre><code>${escapeHtml(part.trim())}</code></pre>`;
+                }
+
+                return part
+                    .split(/\n{2,}/)
+                    .filter(Boolean)
+                    .map((paragraph) => `<p>${escapeHtml(paragraph.trim())}</p>`)
+                    .join('');
+            })
+            .join('');
+
+        const formatDate = (date, lang) => new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }).format(new Date(`${date}T12:00:00`));
+
+        const getSavedLanguage = () => {
+            const saved = localStorage.getItem('takatoke-language');
+            return ['es', 'en'].includes(saved) ? saved : 'es';
+        };
+
+        const applyLanguage = (lang) => {
+            document.documentElement.lang = lang;
+            localStorage.setItem('takatoke-language', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach((element) => {
+                element.textContent = COPY[lang][element.dataset.i18n];
+            });
+
+            document.getElementById('postMeta').textContent = `${POST.type[lang]} · ${formatDate(POST.date, lang)}`;
+            document.getElementById('postTitle').textContent = POST.title[lang];
+            document.getElementById('postSummary').textContent = POST.summary[lang];
+            document.getElementById('postTags').innerHTML = POST.tags[lang].map((tag) => `<span class="post-tag">${tag}</span>`).join('');
+            document.getElementById('postContent').innerHTML = renderContent(POST.content[lang]);
+
+            document.querySelectorAll('.language-button').forEach((button) => {
+                button.classList.toggle('is-active', button.dataset.lang === lang);
+            });
+
+            document.body.removeAttribute('data-loading');
+        };
+
+        document.querySelectorAll('.language-button').forEach((button) => {
+            button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+        });
+
+        applyLanguage(getSavedLanguage());
+    </script>
+</body>
+</html>

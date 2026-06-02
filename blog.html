@@ -202,6 +202,23 @@
             line-height: 1.7;
         }
 
+        .post-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .post-tag {
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.35rem 0.65rem;
+        }
+
         .site-footer {
             border-top: 1px solid #1e293b;
             background: #070a12;
@@ -300,19 +317,7 @@
             <p class="intro-text" data-i18n="blogIntro">Notas cortas sobre actualizaciones, decisiones de diseño y novedades de las apps.</p>
         </section>
 
-        <section class="posts" aria-label="Blog posts">
-            <article class="post">
-                <p class="post-meta" data-i18n="postOneMeta">Actualización · Apps</p>
-                <h2 data-i18n="postOneTitle">Nuevo espacio para novedades de Takatoke Factory</h2>
-                <p data-i18n="postOneText">Este blog servirá para publicar cambios pequeños, mejoras de las apps y notas rápidas sobre lo que se está construyendo.</p>
-            </article>
-
-            <article class="post">
-                <p class="post-meta" data-i18n="postTwoMeta">Portfolio · iOS, iPadOS y macOS</p>
-                <h2 data-i18n="postTwoTitle">Apps vivas, cambios frecuentes</h2>
-                <p data-i18n="postTwoText">Cada app tendrá su propio ritmo: nuevas capturas, ajustes de descripción, funciones y detalles de publicación irán apareciendo aquí.</p>
-            </article>
-        </section>
+        <section class="posts" id="blogPosts" aria-label="Blog posts"></section>
     </main>
 
     <footer class="site-footer">
@@ -326,12 +331,6 @@
                 navBlog: 'Blog',
                 blogTitle: 'Blog',
                 blogIntro: 'Notas cortas sobre actualizaciones, decisiones de diseño y novedades de las apps.',
-                postOneMeta: 'Actualización · Apps',
-                postOneTitle: 'Nuevo espacio para novedades de Takatoke Factory',
-                postOneText: 'Este blog servirá para publicar cambios pequeños, mejoras de las apps y notas rápidas sobre lo que se está construyendo.',
-                postTwoMeta: 'Portfolio · iOS, iPadOS y macOS',
-                postTwoTitle: 'Apps vivas, cambios frecuentes',
-                postTwoText: 'Cada app tendrá su propio ritmo: nuevas capturas, ajustes de descripción, funciones y detalles de publicación irán apareciendo aquí.',
                 rights: 'Todos los derechos reservados.'
             },
             en: {
@@ -339,14 +338,56 @@
                 navBlog: 'Blog',
                 blogTitle: 'Blog',
                 blogIntro: 'Short notes about updates, design decisions and news from the apps.',
-                postOneMeta: 'Update · Apps',
-                postOneTitle: 'A new place for Takatoke Factory updates',
-                postOneText: 'This blog will be used for small changes, app improvements and quick notes about what is being built.',
-                postTwoMeta: 'Portfolio · iOS, iPadOS and macOS',
-                postTwoTitle: 'Living apps, frequent changes',
-                postTwoText: 'Each app will have its own rhythm: new screenshots, description tweaks, features and release details will appear here.',
                 rights: 'All rights reserved.'
             }
+        };
+
+        const BLOG_POSTS = [
+            {
+                href: 'blog/Entrada1/index.html',
+                type: {
+                    es: 'Actualización',
+                    en: 'Update'
+                },
+                date: '2026-05-02',
+                title: {
+                    es: 'BLOG 1: Corrigiendo los números de línea en Falken Writer',
+                    en: 'Fixing Line Numbers in Falken Writer'
+                },
+                summary: {
+                    es: 'Uno de los errores más complejos con los que me topé mientras desarrollaba Falken Writer fue algo que, al principio, suena sencillo: mantener los números de línea visualmente alineados con el texto.',
+                    en: 'One of the trickiest bugs I ran into while building Falken Writer was something that sounds simple at first: keeping line numbers visually aligned with the text.'
+                },
+                tags: {
+                    es: ['Fix', 'Actualización'],
+                    en: ['Fix', 'Update']
+                },
+                published: true
+            }
+        ];
+
+        const formatDate = (date, lang) => new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }).format(new Date(`${date}T12:00:00`));
+
+        const renderPosts = (lang) => {
+            const posts = document.getElementById('blogPosts');
+            posts.innerHTML = BLOG_POSTS
+                .filter((post) => post.published)
+                .sort((a, b) => b.date.localeCompare(a.date))
+                .map((post) => `
+                    <a class="post" href="${post.href}">
+                        <p class="post-meta">${post.type[lang]} · ${formatDate(post.date, lang)}</p>
+                        <h2>${post.title[lang]}</h2>
+                        <p>${post.summary[lang]}</p>
+                        <div class="post-footer">
+                            ${post.tags[lang].map((tag) => `<span class="post-tag">${tag}</span>`).join('')}
+                        </div>
+                    </a>
+                `)
+                .join('');
         };
 
         const getSavedLanguage = () => {
@@ -361,6 +402,8 @@
             document.querySelectorAll('[data-i18n]').forEach((element) => {
                 element.textContent = COPY[lang][element.dataset.i18n];
             });
+
+            renderPosts(lang);
 
             document.querySelectorAll('.language-button').forEach((button) => {
                 button.classList.toggle('is-active', button.dataset.lang === lang);
